@@ -1,0 +1,86 @@
+/* Onboarding */
+"onboarding.page1.title" = "Auranızı Keşfedin";
+"onboarding.page1.description" = "Gelişmiş görüntü analizi ile enerji alanınızın renklerini ortaya çıkarın";
+"onboarding.page2.title" = "Kişiselleştirilmiş İçgörüler";
+"onboarding.page2.description" = "Konumunuza göre kültürel olarak uyarlanmış yorumlar alın";
+"onboarding.page3.title" = "Yolculuğunuzu Takip Edin";
+"onboarding.page3.description" = "Auranızın zaman içinde nasıl değiştiğini izleyin";
+"onboarding.continue" = "Devam";
+"onboarding.getStarted" = "Başlayın";
+
+/* Camera */
+"camera.title" = "Aura Tarayıcı";
+"camera.permission.title" = "Kamera Erişimi Gerekli";
+"camera.permission.message" = "Auranızı taramak için kameranıza erişmemiz gerekiyor";
+"camera.permission.settings" = "Ayarları Aç";
+"camera.permission.grant" = "İzin Ver";
+"camera.position.message" = "Yüzünüzü merkezde konumlandırın";
+"camera.scans.remaining" = "Bugün %d tarama hakkınız kaldı";
+"camera.scans.unlimited" = "Sınırsız Tarama";
+"camera.upgrade" = "Yükselt";
+
+/* Result */
+"result.title" = "Auranız";
+"result.colorComposition" = "Renk Bileşimi";
+"result.interpretation" = "Yorum";
+"result.readFull" = "Tam açıklamayı okuyun";
+"result.save" = "Geçmişe Kaydet";
+"result.saved" = "Kaydedildi";
+"result.scanAgain" = "Tekrar Tara";
+"result.share" = "Paylaş";
+
+/* History */
+"history.title" = "Tarama Geçmişi";
+"history.all" = "Tümü";
+"history.favorites" = "Favoriler";
+"history.scans" = "%d tarama";
+"history.empty.title" = "Henüz Tarama Yok";
+"history.empty.message" = "Tarama geçmişiniz burada görünecek";
+"history.empty.favorites" = "Henüz Favori Yok";
+"history.empty.favoritesMessage" = "Taramaları favori olarak işaretleyin";
+"history.startScanning" = "Taramaya Başla";
+"history.with" = "ve";
+
+/* Settings */
+"settings.title" = "Ayarlar";
+"settings.account" = "Hesap";
+"settings.accountStatus" = "Hesap Durumu";
+"settings.freeUser" = "Ücretsiz Kullanıcı";
+"settings.premiumMember" = "Premium Üye";
+"settings.upgrade" = "Yükselt";
+"settings.localization" = "Yerelleştirme";
+"settings.country" = "Ülke/Bölge";
+"settings.footer.localization" = "Aura yorumları seçtiğiniz bölgeye göre uyarlanacak";
+"settings.notifications" = "Bildirimler";
+"settings.dailyReminders" = "Günlük Hatırlatmalar";
+"settings.footer.notifications" = "Auranızı taramak için günlük hatırlatmalar alın";
+"settings.about" = "Hakkında";
+"settings.privacyPolicy" = "Gizlilik Politikası";
+"settings.termsOfService" = "Kullanım Şartları";
+"settings.version" = "Sürüm";
+"settings.support" = "Destek";
+"settings.contactSupport" = "Destek ile İletişim";
+"settings.rateApp" = "Uygulamayı Değerlendir";
+"settings.done" = "Tamam";
+
+/* Paywall */
+"paywall.title" = "Premium'u Açın";
+"paywall.subtitle" = "Tüm özelliklere sınırsız erişim kazanın";
+"paywall.feature.unlimitedScans" = "Sınırsız Tarama";
+"paywall.feature.detailedDescriptions" = "Detaylı Açıklamalar";
+"paywall.feature.auraTrends" = "Aura Trendleri";
+"paywall.feature.adFree" = "Reklamsız Deneyim";
+"paywall.feature.prioritySupport" = "Öncelikli Destek";
+"paywall.subscribe" = "Ücretsiz Denemeyi Başlat";
+"paywall.price" = "Sonra ayda $4.99";
+"paywall.terms" = "Şartlar ve Koşullar";
+
+/* Errors */
+"error.generic" = "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin.";
+"error.noFaceDetected" = "Yüz tespit edilemedi. Lütfen yüzünüzün açıkça görünür olduğundan emin olun.";
+"error.processingFailed" = "Görüntü işlenemedi. Lütfen daha iyi aydınlatma ile tekrar deneyin.";
+"error.dailyLimitReached" = "Günlük tarama limitinize ulaştınız. Sınırsız tarama için Premium'a yükseltin!";
+
+/* Disclaimer */
+"disclaimer.message" = "Bu uygulama yalnızca eğlence amaçlıdır. Aura okumaları bilimsel olarak kanıtlanmamıştır ve tıbbi veya profesyonel tavsiye için kullanılmamalıdır.";
+

@@ -1,0 +1,162 @@
+{
+  "aura_red": {
+    "colorId": "aura_red",
+    "descriptions": {
+      "default": {
+        "countryCode": "default",
+        "short": "Passion and energy",
+        "long": "Red aura represents strong energy, passion, and vitality. You are a natural leader with powerful emotions and a drive to succeed. Your presence commands attention and inspires action in others.",
+        "traits": ["Energetic", "Passionate", "Strong-willed", "Confident", "Leader"],
+        "advice": "Channel your energy into productive activities. Practice patience and avoid impulsive decisions."
+      },
+      "TR": {
+        "countryCode": "TR",
+        "short": "Tutku ve enerji",
+        "long": "Kırmızı aura güçlü enerji, tutku ve canlılığı temsil eder. Doğal bir lidersiniz, güçlü duygulara ve başarı azmine sahipsiniz. Varlığınız dikkat çeker ve başkalarını harekete geçirir.",
+        "traits": ["Enerjik", "Tutkulu", "Güçlü iradeli", "Kendinden emin", "Lider"],
+        "advice": "Enerjinizi verimli aktivitelere yönlendirin. Sabırlı olun ve aceleci kararlardan kaçının."
+      },
+      "US": {
+        "countryCode": "US",
+        "short": "Passion and power",
+        "long": "Your red aura signals a powerhouse of energy and determination. You're a go-getter who doesn't back down from challenges. Your passionate nature drives you to achieve your goals.",
+        "traits": ["Driven", "Passionate", "Bold", "Competitive", "Assertive"],
+        "advice": "Balance your intensity with moments of calm. Channel your power positively."
+      }
+    }
+  },
+  "aura_orange": {
+    "colorId": "aura_orange",
+    "descriptions": {
+      "default": {
+        "countryCode": "default",
+        "short": "Creativity and enthusiasm",
+        "long": "Orange aura indicates creativity, enthusiasm, and social energy. You are adventurous and love new experiences. Your warmth draws people to you.",
+        "traits": ["Creative", "Enthusiastic", "Social", "Adventurous", "Warm"],
+        "advice": "Express your creativity freely. Stay open to new experiences and connections."
+      },
+      "TR": {
+        "countryCode": "TR",
+        "short": "Yaratıcılık ve coşku",
+        "long": "Turuncu aura yaratıcılığı, coşkuyu ve sosyal enerjiyi gösterir. Maceracısınız ve yeni deneyimleri seviyorsunuz. Sıcaklığınız insanları size çeker.",
+        "traits": ["Yaratıcı", "Coşkulu", "Sosyal", "Maceracı", "Sıcakkanlı"],
+        "advice": "Yaratıcılığınızı özgürce ifade edin. Yeni deneyimlere ve bağlantılara açık kalın."
+      }
+    }
+  },
+  "aura_yellow": {
+    "colorId": "aura_yellow",
+    "descriptions": {
+      "default": {
+        "countryCode": "default",
+        "short": "Clarity and optimism",
+        "long": "Yellow aura reflects intellectual clarity, optimism, and joy. You have a bright and analytical mind. Your positive energy uplifts those around you.",
+        "traits": ["Optimistic", "Intelligent", "Joyful", "Analytical", "Sunny"],
+        "advice": "Share your positive energy with others. Trust your intellectual insights."
+      },
+      "TR": {
+        "countryCode": "TR",
+        "short": "Açıklık ve iyimserlik",
+        "long": "Sarı aura zihinsel berraklık, iyimserlik ve neşeyi yansıtır. Parlak ve analitik bir zihne sahipsiniz. Pozitif enerjiniz etrafınızdakileri yukarı çeker.",
+        "traits": ["İyimser", "Zeki", "Neşeli", "Analitik", "Güneşli"],
+        "advice": "Pozitif enerjinizi başkalarıyla paylaşın. Entelektüel içgörülerinize güvenin."
+      }
+    }
+  },
+  "aura_green": {
+    "colorId": "aura_green",
+    "descriptions": {
+      "default": {
+        "countryCode": "default",
+        "short": "Growth and harmony",
+        "long": "Green aura represents growth, balance, and healing energy. You are a natural healer and peacemaker. Your presence brings calm and restoration.",
+        "traits": ["Balanced", "Healing", "Nurturing", "Peaceful", "Growing"],
+        "advice": "Continue nurturing yourself and others. Maintain your connection with nature."
+      },
+      "TR": {
+        "countryCode": "TR",
+        "short": "Büyüme ve uyum",
+        "long": "Yeşil aura büyümeyi, dengeyi ve şifa enerjisini temsil eder. Doğal bir şifacı ve barış getiricisisiniz. Varlığınız sakinlik ve yenilenme getirir.",
+        "traits": ["Dengeli", "Şifacı", "Besleyici", "Huzurlu", "Gelişen"],
+        "advice": "Kendinizi ve başkalarını beslemeye devam edin. Doğayla bağlantınızı koruyun."
+      }
+    }
+  },
+  "aura_blue": {
+    "colorId": "aura_blue",
+    "descriptions": {
+      "default": {
+        "countryCode": "default",
+        "short": "Calm and intuitive",
+        "long": "Blue aura indicates calmness, intuition, and strong communication skills. You are a natural healer and empath. Your wisdom guides others.",
+        "traits": ["Calm", "Intuitive", "Communicative", "Wise", "Empathic"],
+        "advice": "Trust your intuition and speak your truth. Listen to your inner voice."
+      },
+      "TR": {
+        "countryCode": "TR",
+        "short": "Sakinlik ve sezgi",
+        "long": "Mavi aura sakinliği, sezgiyi ve güçlü iletişim becerilerini gösterir. Doğal bir şifacı ve empatisiniz. Bilgeliğiniz başkalarına rehberlik eder.",
+        "traits": ["Sakin", "Sezgisel", "İletişim becerisi yüksek", "Bilge", "Empatik"],
+        "advice": "Sezgilerinize güvenin ve gerçeğinizi konuşun. İç sesinizi dinleyin."
+      }
+    }
+  },
+  "aura_purple": {
+    "colorId": "aura_purple",
+    "descriptions": {
+      "default": {
+        "countryCode": "default",
+        "short": "Spiritual and mystical",
+        "long": "Purple aura represents spiritual awareness, intuition, and mystical connection. You have a deep understanding of the unseen and spiritual realms.",
+        "traits": ["Spiritual", "Intuitive", "Mystical", "Wise", "Psychic"],
+        "advice": "Develop your spiritual practices. Trust your psychic impressions."
+      },
+      "TR": {
+        "countryCode": "TR",
+        "short": "Ruhsal ve mistik",
+        "long": "Mor aura ruhsal farkındalığı, sezgiyi ve mistik bağlantıyı temsil eder. Görünmeyen ve ruhsal alemler hakkında derin bir anlayışa sahipsiniz.",
+        "traits": ["Ruhsal", "Sezgisel", "Mistik", "Bilge", "Psişik"],
+        "advice": "Ruhsal pratiklerinizi geliştirin. Psişik izlenimlerinize güvenin."
+      }
+    }
+  },
+  "aura_pink": {
+    "colorId": "aura_pink",
+    "descriptions": {
+      "default": {
+        "countryCode": "default",
+        "short": "Love and compassion",
+        "long": "Pink aura reflects love, compassion, and nurturing energy. You have a gentle heart and care deeply for others. Your love heals.",
+        "traits": ["Loving", "Compassionate", "Gentle", "Nurturing", "Kind"],
+        "advice": "Continue spreading love and kindness. Remember to love yourself too."
+      },
+      "TR": {
+        "countryCode": "TR",
+        "short": "Sevgi ve merhamet",
+        "long": "Pembe aura sevgiyi, merhameti ve besleyici enerjiyi yansıtır. Nazik bir kalbe sahipsiniz ve başkaları için derinden önemseme duyuyorsunuz. Sevginiz şifa verir.",
+        "traits": ["Sevgi dolu", "Merhametli", "Nazik", "Besleyici", "İyi kalpli"],
+        "advice": "Sevgi ve nezaket yaymaya devam edin. Kendinizi de sevmeyi unutmayın."
+      }
+    }
+  },
+  "aura_white": {
+    "colorId": "aura_white",
+    "descriptions": {
+      "default": {
+        "countryCode": "default",
+        "short": "Purity and enlightenment",
+        "long": "White aura represents purity, spiritual enlightenment, and divine connection. You have achieved a high level of spiritual awareness.",
+        "traits": ["Pure", "Enlightened", "Spiritual", "Divine", "Protected"],
+        "advice": "Maintain your spiritual practice. Share your light with the world."
+      },
+      "TR": {
+        "countryCode": "TR",
+        "short": "Saflık ve aydınlanma",
+        "long": "Beyaz aura saflığı, ruhsal aydınlanmayı ve ilahi bağlantıyı temsil eder. Yüksek bir ruhsal farkındalık seviyesine ulaşmışsınız.",
+        "traits": ["Saf", "Aydınlanmış", "Ruhsal", "İlahi", "Korumalı"],
+        "advice": "Ruhsal pratiğinizi sürdürün. Işığınızı dünyayla paylaşın."
+      }
+    }
+  }
+}
+
