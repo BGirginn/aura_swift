@@ -13,6 +13,8 @@ class LocalizationService {
     static let shared = LocalizationService()
     
     private var auraDescriptions: [String: AuraColorDescription] = [:]
+    private var auraStories: [String: [String: StoryContent]] = [:] // [colorId: [language: content]]
+    private var userSelectedCountryCode: String?
     
     struct AuraColorDescription: Codable {
         let colorId: String
@@ -27,15 +29,20 @@ class LocalizationService {
         }
     }
     
+    struct StoryContent: Codable {
+        let story: String
+    }
+    
     private init() {
         loadAuraDescriptions()
+        loadAuraStories()
     }
     
     // MARK: - Public Methods
     
     /// Get localized description for an aura color
     func getDescription(for auraColor: AuraColor, countryCode: String? = nil) -> AuraColor.LocalizedDescription? {
-        let code = countryCode ?? Locale.current.regionCode ?? "US"
+        let code = countryCode ?? getCurrentCountryCode()
         
         // Try to get from loaded descriptions
         if let description = auraDescriptions[auraColor.id]?.descriptions[code] {
@@ -72,6 +79,40 @@ class LocalizationService {
         return getDescription(for: auraColor, countryCode: countryCode)?.longDescription ?? "No description available"
     }
     
+    // MARK: - Country Code Management
+    
+    func setCountryCode(_ code: String) {
+        userSelectedCountryCode = code
+        print("📍 LocalizationService: Country code set to \(code)")
+    }
+    
+    func getCurrentCountryCode() -> String {
+        // Priority: 1. User selection, 2. Saved preference, 3. System locale
+        if let selected = userSelectedCountryCode {
+            return selected
+        }
+        if let saved = UserDefaults.standard.string(forKey: UserDefaultsKeys.selectedCountryCode) {
+            userSelectedCountryCode = saved
+            return saved
+        }
+        return Locale.current.regionCode ?? "US"
+    }
+    
+    /// Get aura story (narrative/storytelling style)
+    func getStory(for auraColor: AuraColor, countryCode: String? = nil) -> String {
+        let code = countryCode ?? getCurrentCountryCode()
+        let language = Locale.current.languageCode ?? "en"
+        let langKey = language.hasPrefix("tr") ? "TR" : code
+        
+        // Try to get story for this color and language
+        if let story = auraStories[auraColor.id]?[langKey]?.story {
+            return story
+        }
+        
+        // Fallback to description
+        return getLongDescription(for: auraColor, countryCode: code)
+    }
+    
     // MARK: - Private Methods
     
     private func loadAuraDescriptions() {
@@ -84,6 +125,19 @@ class LocalizationService {
         }
         
         auraDescriptions = descriptions
+    }
+    
+    private func loadAuraStories() {
+        // Load from JSON file in Resources
+        guard let url = Bundle.main.url(forResource: "aura_stories", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let stories = try? JSONDecoder().decode([String: [String: StoryContent]].self, from: data) else {
+            print("⚠️ Could not load aura stories, using fallback")
+            return
+        }
+        
+        auraStories = stories
+        print("✅ Loaded aura stories for \(stories.count) colors")
     }
     
     private func loadDefaultDescriptions() {

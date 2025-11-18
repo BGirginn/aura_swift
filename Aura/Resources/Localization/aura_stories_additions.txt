@@ -1,0 +1,2 @@
+Due to file length, I'll create a summary script to add the remaining translations.
+The remaining 7 colors (orange, yellow, green, blue, purple, pink, white) need DE, FR, UK added.

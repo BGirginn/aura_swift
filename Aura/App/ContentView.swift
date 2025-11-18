@@ -21,26 +21,26 @@ struct ContentView: View {
                 
             case .modeSelection:
                 ModeSelectionView(coordinator: coordinator)
-                    .transition(.opacity)
+                    .transition(.move(edge: .trailing).combined(with: .opacity))
                 
             case .quiz:
                 QuizView(coordinator: coordinator)
-                    .transition(.opacity)
+                    .transition(.move(edge: .trailing).combined(with: .opacity))
                 
             case .camera(let mode):
                 CameraView(coordinator: coordinator, mode: mode)
-                    .transition(.opacity)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
                 
             case .result(let result, let mode):
                 ResultView(result: result, coordinator: coordinator, mode: mode)
-                    .transition(.opacity)
+                    .transition(.scale.combined(with: .opacity))
                 
             case .history:
                 HistoryView(coordinator: coordinator)
-                    .transition(.opacity)
+                    .transition(.move(edge: .leading).combined(with: .opacity))
             }
         }
-        .animation(.easeInOut, value: coordinator.currentScreen)
+        .animation(.easeInOut(duration: 0.35), value: coordinator.currentScreen)
         .sheet(isPresented: $coordinator.isShowingSettings) {
             SettingsView()
         }

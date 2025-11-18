@@ -38,8 +38,10 @@
 		80B2080A8C3308224C876DC5 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40A56D715CF9FB240F7AB60 /* QuizQuestion.swift */; };
 		89F08622C2B3C031FB704640 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2F2672DE538DECB50CB9A7 /* AppCoordinator.swift */; };
 		9EF2B040265032385F514A3B /* AuraMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C41EC77B73A2191778F7518 /* AuraMode.swift */; };
+		A2BCE865D65ABB333F802534 /* aura_stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D74A161029B20E10B56C4CD /* aura_stories.json */; };
 		A306AD52B4CA20F3DBD1D9AF /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD982BAD5B20E852B96620 /* CameraViewModel.swift */; };
 		A98184B48CDA7EAF98D89302 /* AuraDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57097A42CF44E842DFA29267 /* AuraDataModel.xcdatamodeld */; };
+		AB4B327297B141B73C36CF7C /* aura_stories_additions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9CC9B5A14BD2369394C339F8 /* aura_stories_additions.txt */; };
 		AD435B42EA5CE5A7C468AC25 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D3F91CBFAEB02460EC01 /* SettingsView.swift */; };
 		ADD2B21A7FBE757A161AAEE7 /* AuraColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E1CB1A8ABD96D6AC69D9FC /* AuraColor.swift */; };
 		AE765AA81D5A5F473DEA5EA6 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E4F3ADB2BBB86FBB4A1D5 /* HapticManager.swift */; };
@@ -108,12 +110,15 @@
 		41E220A09FB307A896F69EC3 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		43151EE38AB9C4BD7FFB0F72 /* aura_comments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = aura_comments.json; sourceTree = "<group>"; };
 		4550651BFAFBCE1B1C947166 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		4803458309C7F43121F083E4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4A9E59AC258B2C2BA91E5EF7 /* Aura.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Aura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		572FCAE67CB9FDC81AD3FDCD /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		57E05368A92DA9A8FA8CF943 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5808425EA89ED7476F6DAE27 /* AuraRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraRingsView.swift; sourceTree = "<group>"; };
 		5887C106111B2A99B605D27D /* AuraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraApp.swift; sourceTree = "<group>"; };
 		5C41EC77B73A2191778F7518 /* AuraMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraMode.swift; sourceTree = "<group>"; };
 		67DDE0A274A30B15851A87AF /* ColorAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAnalyzer.swift; sourceTree = "<group>"; };
+		6D74A161029B20E10B56C4CD /* aura_stories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = aura_stories.json; sourceTree = "<group>"; };
 		6EF6A87C529F964A49C2DA6D /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		70CB4E577919F32328644634 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StoreKit.framework; sourceTree = "<group>"; };
 		764DEE5EAC98521398A02A1A /* AuraResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraResult.swift; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 		8F3D02E4A3C2955A99262EFB /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
 		938EA13730D79840F2FCBBA5 /* Aura.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aura.entitlements; sourceTree = "<group>"; };
 		9C2A570EF807011633DDFE54 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		9CC9B5A14BD2369394C339F8 /* aura_stories_additions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = aura_stories_additions.txt; sourceTree = "<group>"; };
 		A4DF3D6088EB45BF8FC1E78D /* AuraUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AuraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A664D5581D37A2A4E55226 /* DebugManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugManager.swift; sourceTree = "<group>"; };
 		B241B66FE1BD81E524EA6518 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = "<group>"; };
@@ -403,6 +409,8 @@
 			isa = PBXGroup;
 			children = (
 				43151EE38AB9C4BD7FFB0F72 /* aura_comments.json */,
+				9CC9B5A14BD2369394C339F8 /* aura_stories_additions.txt */,
+				6D74A161029B20E10B56C4CD /* aura_stories.json */,
 				DC7364CBDD6450F7B57E8AEA /* Localizable.strings */,
 				BE352B87F5C8577B068BC75F /* quiz_questions.json */,
 			);
@@ -523,7 +531,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				de,
 				en,
+				fr,
 				tr,
 			);
 			mainGroup = 1A691351EBE1DD7961333418;
@@ -547,6 +557,8 @@
 				0E1D7EE48DF1C1AB154857EF /* Assets.xcassets in Resources */,
 				2E24F64E966D5F09FC2335C7 /* Localizable.strings in Resources */,
 				3BE74063BFB874CCE4BFB3C3 /* aura_comments.json in Resources */,
+				A2BCE865D65ABB333F802534 /* aura_stories.json in Resources */,
+				AB4B327297B141B73C36CF7C /* aura_stories_additions.txt in Resources */,
 				C8E172C1D650E0E13DFA582F /* quiz_questions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,7 +644,9 @@
 		DC7364CBDD6450F7B57E8AEA /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
+				4803458309C7F43121F083E4 /* de */,
 				1640981C7B02BF83EB28BD6F /* en */,
+				57E05368A92DA9A8FA8CF943 /* fr */,
 				6EF6A87C529F964A49C2DA6D /* tr */,
 			);
 			name = Localizable.strings;

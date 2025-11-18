@@ -22,6 +22,20 @@
         "long": "Your red aura signals a powerhouse of energy and determination. You're a go-getter who doesn't back down from challenges. Your passionate nature drives you to achieve your goals.",
         "traits": ["Driven", "Passionate", "Bold", "Competitive", "Assertive"],
         "advice": "Balance your intensity with moments of calm. Channel your power positively."
+      },
+      "DE": {
+        "countryCode": "DE",
+        "short": "Leidenschaft und Energie",
+        "long": "Rote Aura repräsentiert starke Energie, Leidenschaft und Vitalität. Du bist ein natürlicher Anführer mit kraftvollen Emotionen und einem Drang zum Erfolg. Deine Präsenz fordert Aufmerksamkeit und inspiriert andere zum Handeln.",
+        "traits": ["Energisch", "Leidenschaftlich", "Willensstark", "Selbstbewusst", "Führer"],
+        "advice": "Lenke deine Energie in produktive Aktivitäten. Übe Geduld und vermeide impulsive Entscheidungen."
+      },
+      "FR": {
+        "countryCode": "FR",
+        "short": "Passion et énergie",
+        "long": "L'aura rouge représente une énergie forte, la passion et la vitalité. Vous êtes un leader naturel avec des émotions puissantes et une volonté de réussir. Votre présence commande l'attention et inspire l'action chez les autres.",
+        "traits": ["Énergique", "Passionné", "Déterminé", "Confiant", "Leader"],
+        "advice": "Canalisez votre énergie dans des activités productives. Pratiquez la patience et évitez les décisions impulsives."
       }
     }
   },
@@ -48,6 +62,20 @@
         "long": "Your orange aura radiates creative energy and infectious enthusiasm. You're a natural motivator who inspires others with your adventurous spirit.",
         "traits": ["Creative", "Energetic", "Social", "Fun-loving", "Spontaneous"],
         "advice": "Channel your creative energy into projects. Share your enthusiasm with others."
+      },
+      "DE": {
+        "countryCode": "DE",
+        "short": "Kreativität und Begeisterung",
+        "long": "Orange Aura zeigt Kreativität, Begeisterung und soziale Energie. Du bist abenteuerlustig und liebst neue Erfahrungen. Deine Wärme zieht Menschen zu dir.",
+        "traits": ["Kreativ", "Begeistert", "Sozial", "Abenteuerlustig", "Herzlich"],
+        "advice": "Drücke deine Kreativität frei aus. Bleibe offen für neue Erfahrungen und Verbindungen."
+      },
+      "FR": {
+        "countryCode": "FR",
+        "short": "Créativité et enthousiasme",
+        "long": "L'aura orange indique la créativité, l'enthousiasme et l'énergie sociale. Vous êtes aventureux et aimez les nouvelles expériences. Votre chaleur attire les gens vers vous.",
+        "traits": ["Créatif", "Enthousiaste", "Social", "Aventureux", "Chaleureux"],
+        "advice": "Exprimez votre créativité librement. Restez ouvert aux nouvelles expériences et connexions."
       }
     }
   },
@@ -67,6 +95,20 @@
         "long": "Sarı aura zihinsel berraklık, iyimserlik ve neşeyi yansıtır. Parlak ve analitik bir zihne sahipsiniz. Pozitif enerjiniz etrafınızdakileri yukarı çeker.",
         "traits": ["İyimser", "Zeki", "Neşeli", "Analitik", "Güneşli"],
         "advice": "Pozitif enerjinizi başkalarıyla paylaşın. Entelektüel içgörülerinize güvenin."
+      },
+      "DE": {
+        "countryCode": "DE",
+        "short": "Klarheit und Optimismus",
+        "long": "Gelbe Aura reflektiert intellektuelle Klarheit, Optimismus und Freude. Du hast einen hellen und analytischen Verstand. Deine positive Energie hebt die Menschen um dich herum.",
+        "traits": ["Optimistisch", "Intelligent", "Fröhlich", "Analytisch", "Sonnig"],
+        "advice": "Teile deine positive Energie mit anderen. Vertraue deinen intellektuellen Einsichten."
+      },
+      "FR": {
+        "countryCode": "FR",
+        "short": "Clarté et optimisme",
+        "long": "L'aura jaune reflète la clarté intellectuelle, l'optimisme et la joie. Vous avez un esprit brillant et analytique. Votre énergie positive élève ceux qui vous entourent.",
+        "traits": ["Optimiste", "Intelligent", "Joyeux", "Analytique", "Ensoleillé"],
+        "advice": "Partagez votre énergie positive avec les autres. Faites confiance à vos intuitions intellectuelles."
       }
     }
   },
@@ -93,6 +135,20 @@
         "long": "Your green aura reflects natural balance and healing abilities. You bring peace wherever you go and have a gift for helping others grow.",
         "traits": ["Balanced", "Healer", "Compassionate", "Natural", "Grounded"],
         "advice": "Trust your healing instincts. Spend time in nature to recharge your energy."
+      },
+      "DE": {
+        "countryCode": "DE",
+        "short": "Wachstum und Harmonie",
+        "long": "Grüne Aura repräsentiert Wachstum, Balance und heilende Energie. Du bist ein natürlicher Heiler und Friedensstifter. Deine Präsenz bringt Ruhe und Erneuerung.",
+        "traits": ["Ausgeglichen", "Heilend", "Fürsorglich", "Friedlich", "Wachsend"],
+        "advice": "Pflege weiterhin dich selbst und andere. Bewahre deine Verbindung zur Natur."
+      },
+      "FR": {
+        "countryCode": "FR",
+        "short": "Croissance et harmonie",
+        "long": "L'aura verte représente la croissance, l'équilibre et l'énergie de guérison. Vous êtes un guérisseur naturel et un artisan de paix. Votre présence apporte le calme et la restauration.",
+        "traits": ["Équilibré", "Guérisseur", "Nourrissant", "Paisible", "Croissant"],
+        "advice": "Continuez à vous nourrir vous-même et les autres. Maintenez votre connexion avec la nature."
       }
     }
   },
@@ -112,6 +168,20 @@
         "long": "Mavi aura sakinliği, sezgiyi ve güçlü iletişim becerilerini gösterir. Doğal bir şifacı ve empatisiniz. Bilgeliğiniz başkalarına rehberlik eder.",
         "traits": ["Sakin", "Sezgisel", "İletişim becerisi yüksek", "Bilge", "Empatik"],
         "advice": "Sezgilerinize güvenin ve gerçeğinizi konuşun. İç sesinizi dinleyin."
+      },
+      "DE": {
+        "countryCode": "DE",
+        "short": "Ruhe und Intuition",
+        "long": "Blaue Aura zeigt Ruhe, Intuition und starke Kommunikationsfähigkeiten. Du bist ein natürlicher Heiler und Empath. Deine Weisheit leitet andere.",
+        "traits": ["Ruhig", "Intuitiv", "Kommunikativ", "Weise", "Empathisch"],
+        "advice": "Vertraue deiner Intuition und sprich deine Wahrheit. Höre auf deine innere Stimme."
+      },
+      "FR": {
+        "countryCode": "FR",
+        "short": "Calme et intuitif",
+        "long": "L'aura bleue indique le calme, l'intuition et de fortes compétences en communication. Vous êtes un guérisseur naturel et un empathe. Votre sagesse guide les autres.",
+        "traits": ["Calme", "Intuitif", "Communicatif", "Sage", "Empathique"],
+        "advice": "Faites confiance à votre intuition et parlez votre vérité. Écoutez votre voix intérieure."
       }
     }
   },
@@ -131,6 +201,20 @@
         "long": "Mor aura ruhsal farkındalığı, sezgiyi ve mistik bağlantıyı temsil eder. Görünmeyen ve ruhsal alemler hakkında derin bir anlayışa sahipsiniz.",
         "traits": ["Ruhsal", "Sezgisel", "Mistik", "Bilge", "Psişik"],
         "advice": "Ruhsal pratiklerinizi geliştirin. Psişik izlenimlerinize güvenin."
+      },
+      "DE": {
+        "countryCode": "DE",
+        "short": "Spirituell und mystisch",
+        "long": "Lila Aura repräsentiert spirituelles Bewusstsein, Intuition und mystische Verbindung. Du hast ein tiefes Verständnis für das Unsichtbare und spirituelle Bereiche.",
+        "traits": ["Spirituell", "Intuitiv", "Mystisch", "Weise", "Psychisch"],
+        "advice": "Entwickle deine spirituellen Praktiken. Vertraue deinen psychischen Eindrücken."
+      },
+      "FR": {
+        "countryCode": "FR",
+        "short": "Spirituel et mystique",
+        "long": "L'aura violette représente la conscience spirituelle, l'intuition et la connexion mystique. Vous avez une compréhension profonde de l'invisible et des royaumes spirituels.",
+        "traits": ["Spirituel", "Intuitif", "Mystique", "Sage", "Psychique"],
+        "advice": "Développez vos pratiques spirituelles. Faites confiance à vos impressions psychiques."
       }
     }
   },
@@ -150,6 +234,20 @@
         "long": "Pembe aura sevgiyi, merhameti ve besleyici enerjiyi yansıtır. Nazik bir kalbe sahipsiniz ve başkaları için derinden önemseme duyuyorsunuz. Sevginiz şifa verir.",
         "traits": ["Sevgi dolu", "Merhametli", "Nazik", "Besleyici", "İyi kalpli"],
         "advice": "Sevgi ve nezaket yaymaya devam edin. Kendinizi de sevmeyi unutmayın."
+      },
+      "DE": {
+        "countryCode": "DE",
+        "short": "Liebe und Mitgefühl",
+        "long": "Rosa Aura reflektiert Liebe, Mitgefühl und nährende Energie. Du hast ein sanftes Herz und kümmerst dich tief um andere. Deine Liebe heilt.",
+        "traits": ["Liebevoll", "Mitfühlend", "Sanft", "Fürsorglich", "Freundlich"],
+        "advice": "Verbreite weiterhin Liebe und Freundlichkeit. Vergiss nicht, auch dich selbst zu lieben."
+      },
+      "FR": {
+        "countryCode": "FR",
+        "short": "Amour et compassion",
+        "long": "L'aura rose reflète l'amour, la compassion et l'énergie nourrissante. Vous avez un cœur tendre et vous vous souciez profondément des autres. Votre amour guérit.",
+        "traits": ["Aimant", "Compatissant", "Doux", "Nourrissant", "Gentil"],
+        "advice": "Continuez à répandre l'amour et la gentillesse. N'oubliez pas de vous aimer aussi."
       }
     }
   },
@@ -169,6 +267,20 @@
         "long": "Beyaz aura saflığı, ruhsal aydınlanmayı ve ilahi bağlantıyı temsil eder. Yüksek bir ruhsal farkındalık seviyesine ulaşmışsınız.",
         "traits": ["Saf", "Aydınlanmış", "Ruhsal", "İlahi", "Korumalı"],
         "advice": "Ruhsal pratiğinizi sürdürün. Işığınızı dünyayla paylaşın."
+      },
+      "DE": {
+        "countryCode": "DE",
+        "short": "Reinheit und Erleuchtung",
+        "long": "Weiße Aura repräsentiert Reinheit, spirituelle Erleuchtung und göttliche Verbindung. Du hast ein hohes Niveau spirituellen Bewusstseins erreicht.",
+        "traits": ["Rein", "Erleuchtet", "Spirituell", "Göttlich", "Geschützt"],
+        "advice": "Erhalte deine spirituelle Praxis. Teile dein Licht mit der Welt."
+      },
+      "FR": {
+        "countryCode": "FR",
+        "short": "Pureté et illumination",
+        "long": "L'aura blanche représente la pureté, l'illumination spirituelle et la connexion divine. Vous avez atteint un haut niveau de conscience spirituelle.",
+        "traits": ["Pur", "Illuminé", "Spirituel", "Divin", "Protégé"],
+        "advice": "Maintenez votre pratique spirituelle. Partagez votre lumière avec le monde."
       }
     }
   }

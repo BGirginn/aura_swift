@@ -1,0 +1,86 @@
+/* Onboarding */
+"onboarding.title.1" = "Entdecke deine Aura";
+"onboarding.desc.1" = "Enthülle die Farben deines Energiefelds durch fortschrittliche Bildanalyse";
+"onboarding.title.2" = "Personalisierte Einblicke";
+"onboarding.desc.2" = "Erhalte kulturell angepasste Interpretationen basierend auf deinem Standort";
+"onboarding.title.3" = "Verfolge deine Reise";
+"onboarding.desc.3" = "Beobachte, wie sich deine Aura im Laufe der Zeit verändert";
+"onboarding.continue" = "Weiter";
+"onboarding.getStarted" = "Los geht's";
+
+/* Mode Selection */
+"mode.title" = "Wähle deinen Aura-Pfad";
+"mode.quiz" = "Persönlichkeitsquiz";
+"mode.photoAnalysis" = "Fotoanalyse";
+"mode.faceDetection" = "Gesichts-Aura";
+"mode.quiz.desc" = "Entdecke deine Aura durch psychologische Fragen, die deine Persönlichkeit analysieren.";
+"mode.photo.desc" = "Analysiere die Farbenergie, die von deiner Kleidung oder Umgebung ausstrahlt.";
+"mode.face.desc" = "Untersuche eingehend die Aura-Farben, die von deinem Gesicht ausgehen.";
+
+/* Camera */
+"camera.title" = "Aura-Scanner";
+"camera.subtitle" = "Positioniere dein Gesicht in der Mitte";
+"camera.capture" = "AUFNEHMEN";
+"camera.gallery" = "Galerie";
+"camera.permission.title" = "Kamerazugriff erforderlich";
+"camera.permission.message" = "Wir benötigen Kamerazugriff, um deine Aura von deinem Foto zu scannen";
+"camera.permission.settings" = "Einstellungen öffnen";
+
+/* Result */
+"result.title" = "Deine Aura";
+"result.composition" = "Deine Aura-Zusammensetzung";
+"result.readFull" = "Vollständige Beschreibung lesen";
+"result.showSummary" = "Zusammenfassung anzeigen";
+"result.save" = "In Verlauf speichern";
+"result.share" = "Teilen";
+"result.scanAgain" = "Erneut scannen";
+
+/* History */
+"history.title" = "Scan-Verlauf";
+"history.empty" = "Noch keine Scans";
+"history.empty.desc" = "Dein Scan-Verlauf wird hier angezeigt";
+"history.filter.all" = "Alle";
+"history.filter.favorites" = "Favoriten";
+"history.deleteAll" = "Gesamten Verlauf löschen?";
+"history.deleteAll.message" = "Bist du sicher, dass du den gesamten Scan-Verlauf löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden.";
+
+/* Settings */
+"settings.title" = "Einstellungen";
+"settings.localization" = "Lokalisierung";
+"settings.country" = "Land/Region";
+"settings.country.footer" = "Aura-Interpretationen werden an deine ausgewählte Region angepasst";
+"settings.notifications" = "Benachrichtigungen";
+"settings.dailyReminders" = "Tägliche Erinnerungen";
+"settings.dailyReminders.footer" = "Erhalte tägliche Erinnerungen, um deine Aura zu scannen";
+"settings.about" = "Über";
+"settings.privacy" = "Datenschutzrichtlinie";
+"settings.terms" = "Nutzungsbedingungen";
+"settings.version" = "Version";
+"settings.support" = "Unterstützung";
+"settings.contact" = "Support kontaktieren";
+"settings.rate" = "App bewerten";
+
+/* Quiz */
+"quiz.title" = "Persönlichkeitsquiz";
+"quiz.previous" = "Zurück";
+"quiz.next" = "Weiter";
+"quiz.finish" = "Fertig";
+"quiz.loading" = "Fragen werden geladen...";
+
+/* Common */
+"common.cancel" = "Abbrechen";
+"common.delete" = "Löschen";
+"common.done" = "Fertig";
+"common.ok" = "OK";
+"common.error" = "Fehler";
+"common.loading" = "Lädt...";
+
+/* Aura Colors */
+"aura.red" = "Rot";
+"aura.orange" = "Orange";
+"aura.yellow" = "Gelb";
+"aura.green" = "Grün";
+"aura.blue" = "Blau";
+"aura.purple" = "Lila";
+"aura.pink" = "Rosa";
+"aura.white" = "Weiß";

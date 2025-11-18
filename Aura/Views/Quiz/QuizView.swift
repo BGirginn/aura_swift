@@ -200,13 +200,6 @@ struct AnswerButton: View {
                     .multilineTextAlignment(.leading)
                 
                 Spacer()
-                
-                // Color indicator (subtle hint)
-                if let auraColor = answer.auraColor {
-                    Circle()
-                        .fill(auraColor.color.opacity(0.3))
-                        .frame(width: 12, height: 12)
-                }
             }
             .padding(LayoutConstants.padding)
             .background(

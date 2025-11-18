@@ -52,11 +52,11 @@ struct CameraView: View {
             }
         }
         .sheet(isPresented: $showImagePicker) {
-            ImagePicker(image: $viewModel.capturedImage, onImagePicked: handleGalleryPick)
+            ImagePicker(onImagePicked: handleGalleryPick)
         }
         .onChange(of: viewModel.detectedAuraResult) { result in
             if let result = result {
-                coordinator.showResult(result)
+                coordinator.showResult(result, mode: mode)
                 viewModel.reset()
             }
         }
@@ -297,7 +297,7 @@ struct CameraView: View {
         viewModel.capturePhoto()
     }
     
-    private func handleGalleryPick(image: UIImage?) {
+    private func handleGalleryPick(_ image: UIImage?) {
         guard let image = image else { return }
         HapticManager.shared.scanStarted()
         viewModel.processImage(image, mode: mode)
@@ -308,7 +308,6 @@ struct CameraView: View {
 
 struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
-    @Binding var image: UIImage?
     var onImagePicked: (UIImage?) -> Void
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
@@ -332,14 +331,14 @@ struct ImagePicker: UIViewControllerRepresentable {
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            parent.presentationMode.wrappedValue.dismiss()
+            
             if let image = info[.originalImage] as? UIImage {
                 print("✅ Image picked: \(image.size)")
-                parent.image = image
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.async {
                     self.parent.onImagePicked(image)
                 }
             }
-            parent.presentationMode.wrappedValue.dismiss()
         }
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

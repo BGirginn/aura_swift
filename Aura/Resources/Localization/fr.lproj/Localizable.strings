@@ -1,0 +1,86 @@
+/* Onboarding */
+"onboarding.title.1" = "Découvrez votre aura";
+"onboarding.desc.1" = "Révélez les couleurs de votre champ énergétique grâce à une analyse d'image avancée";
+"onboarding.title.2" = "Aperçus personnalisés";
+"onboarding.desc.2" = "Obtenez des interprétations adaptées à votre culture en fonction de votre localisation";
+"onboarding.title.3" = "Suivez votre parcours";
+"onboarding.desc.3" = "Surveillez l'évolution de votre aura au fil du temps";
+"onboarding.continue" = "Continuer";
+"onboarding.getStarted" = "Commencer";
+
+/* Mode Selection */
+"mode.title" = "Choisissez votre chemin d'aura";
+"mode.quiz" = "Quiz de personnalité";
+"mode.photoAnalysis" = "Analyse photo";
+"mode.faceDetection" = "Aura faciale";
+"mode.quiz.desc" = "Découvrez votre aura à travers des questions psychologiques analysant votre personnalité.";
+"mode.photo.desc" = "Analysez l'énergie colorée émanant de vos vêtements ou de votre environnement.";
+"mode.face.desc" = "Examinez en profondeur les couleurs d'aura émanant de votre visage.";
+
+/* Camera */
+"camera.title" = "Scanner d'aura";
+"camera.subtitle" = "Positionnez votre visage au centre";
+"camera.capture" = "CAPTURER";
+"camera.gallery" = "Galerie";
+"camera.permission.title" = "Accès à la caméra requis";
+"camera.permission.message" = "Nous avons besoin d'accéder à la caméra pour scanner votre aura à partir de votre photo";
+"camera.permission.settings" = "Ouvrir les paramètres";
+
+/* Result */
+"result.title" = "Votre aura";
+"result.composition" = "Votre composition d'aura";
+"result.readFull" = "Lire la description complète";
+"result.showSummary" = "Afficher le résumé";
+"result.save" = "Enregistrer dans l'historique";
+"result.share" = "Partager";
+"result.scanAgain" = "Scanner à nouveau";
+
+/* History */
+"history.title" = "Historique des scans";
+"history.empty" = "Aucun scan encore";
+"history.empty.desc" = "Votre historique de scans apparaîtra ici";
+"history.filter.all" = "Tous";
+"history.filter.favorites" = "Favoris";
+"history.deleteAll" = "Supprimer tout l'historique?";
+"history.deleteAll.message" = "Êtes-vous sûr de vouloir supprimer tout l'historique des scans ? Cette action ne peut pas être annulée.";
+
+/* Settings */
+"settings.title" = "Paramètres";
+"settings.localization" = "Localisation";
+"settings.country" = "Pays/Région";
+"settings.country.footer" = "Les interprétations d'aura seront adaptées à votre région sélectionnée";
+"settings.notifications" = "Notifications";
+"settings.dailyReminders" = "Rappels quotidiens";
+"settings.dailyReminders.footer" = "Recevez des rappels quotidiens pour scanner votre aura";
+"settings.about" = "À propos";
+"settings.privacy" = "Politique de confidentialité";
+"settings.terms" = "Conditions d'utilisation";
+"settings.version" = "Version";
+"settings.support" = "Assistance";
+"settings.contact" = "Contacter le support";
+"settings.rate" = "Évaluer l'application";
+
+/* Quiz */
+"quiz.title" = "Quiz de personnalité";
+"quiz.previous" = "Précédent";
+"quiz.next" = "Suivant";
+"quiz.finish" = "Terminer";
+"quiz.loading" = "Chargement des questions...";
+
+/* Common */
+"common.cancel" = "Annuler";
+"common.delete" = "Supprimer";
+"common.done" = "Terminé";
+"common.ok" = "OK";
+"common.error" = "Erreur";
+"common.loading" = "Chargement...";
+
+/* Aura Colors */
+"aura.red" = "Rouge";
+"aura.orange" = "Orange";
+"aura.yellow" = "Jaune";
+"aura.green" = "Vert";
+"aura.blue" = "Bleu";
+"aura.purple" = "Violet";
+"aura.pink" = "Rose";
+"aura.white" = "Blanc";

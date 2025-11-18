@@ -14,19 +14,34 @@ struct OnboardingView: View {
     
     private let pages: [OnboardingPage] = [
         OnboardingPage(
-            title: "Discover Your Aura",
-            description: "Reveal the colors of your energy field through advanced image analysis",
-            icon: "sparkles"
+            title: "See Your Hidden Colors",
+            description: "Capture your aura with the camera or gallery using advanced on-device analysis. No uploads, no waiting.",
+            icon: "sparkles",
+            highlights: [
+                "Face & full-photo scanning",
+                "Real-time aura previews",
+                "Privacy-first processing"
+            ]
         ),
         OnboardingPage(
-            title: "Personalized Insights",
-            description: "Get culturally adapted interpretations based on your location",
-            icon: "globe.asia.australia"
+            title: "Interpretations That Feel Personal",
+            description: "Choose your country to unlock culturally adapted meanings, aura stories, and personality insights.",
+            icon: "globe.asia.australia",
+            highlights: [
+                "Localized descriptions (TR, US, DE, FR, UK)",
+                "Story-style aura guidance",
+                "Share-ready cards"
+            ]
         ),
         OnboardingPage(
-            title: "Track Your Journey",
-            description: "Monitor how your aura changes over time",
-            icon: "chart.line.uptrend.xyaxis"
+            title: "Track Energy Shifts Over Time",
+            description: "Save results to history, favorite special scans, and revisit past auras whenever you want.",
+            icon: "chart.line.uptrend.xyaxis",
+            highlights: [
+                "Timeline of every scan",
+                "Personality quiz mode",
+                "Debug/test tools for experiments"
+            ]
         )
     ]
     
@@ -54,6 +69,7 @@ struct OnboardingView: View {
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
+                .animation(.easeInOut(duration: 0.35), value: currentPage)
                 
                 // Continue Button
                 Button(action: handleContinue) {
@@ -89,10 +105,12 @@ struct OnboardingPage {
     let title: String
     let description: String
     let icon: String
+    let highlights: [String]
 }
 
 struct OnboardingPageView: View {
     let page: OnboardingPage
+    @State private var iconScale: CGFloat = 1.0
     
     var body: some View {
         VStack(spacing: LayoutConstants.largePadding) {
@@ -102,7 +120,16 @@ struct OnboardingPageView: View {
             Image(systemName: page.icon)
                 .font(.system(size: 100))
                 .foregroundColor(.auraAccent)
+                .scaleEffect(iconScale)
                 .padding(.bottom, LayoutConstants.padding)
+                .onAppear {
+                    withAnimation(
+                        Animation.easeInOut(duration: 1.5)
+                            .repeatForever(autoreverses: true)
+                    ) {
+                        iconScale = 1.1
+                    }
+                }
             
             // Title
             Text(page.title)
@@ -117,8 +144,25 @@ struct OnboardingPageView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, LayoutConstants.largePadding)
             
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(page.highlights, id: \.self) { highlight in
+                    HStack(alignment: .top, spacing: 8) {
+                        Image(systemName: "sparkle")
+                            .foregroundColor(.auraAccent)
+                        Text(highlight)
+                            .font(.subheadline)
+                            .foregroundColor(.auraTextSecondary)
+                    }
+                }
+            }
+            .padding(.horizontal, LayoutConstants.largePadding)
+            
             Spacer()
         }
+        .transition(.asymmetric(
+            insertion: .move(edge: .trailing).combined(with: .opacity),
+            removal: .move(edge: .leading).combined(with: .opacity)
+        ))
     }
 }
 

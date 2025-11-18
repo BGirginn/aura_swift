@@ -33,11 +33,8 @@ struct ResultView: View {
                     // Aura Ring Visualization
                     auraRingsView
                     
-                    // Color Breakdown
-                    colorBreakdownView
-                    
-                    // Description
-                    descriptionView
+                    // Combined Aura Composition
+                    combinedAuraView
                     
                     // Action Buttons
                     actionButtonsView
@@ -107,9 +104,119 @@ struct ResultView: View {
         .padding(.vertical, LayoutConstants.padding)
     }
     
-    // MARK: - Color Breakdown
+    // MARK: - Combined Aura View
     
-    private var colorBreakdownView: some View {
+    private var combinedAuraView: some View {
+        VStack(spacing: LayoutConstants.padding) {
+            Text("Your Aura Composition")
+                .font(.headline)
+                .foregroundColor(.auraText)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            // Primary Color
+            VStack(alignment: .leading, spacing: 12) {
+                HStack {
+                    Circle()
+                        .fill(viewModel.auraResult.primaryColor.color)
+                        .frame(width: 30, height: 30)
+                    Text(viewModel.auraResult.primaryColor.name + " Aura")
+                        .font(.title3.bold())
+                        .foregroundColor(.auraText)
+                    Spacer()
+                    if !viewModel.auraResult.dominancePercentages.isEmpty {
+                        Text(String(format: "%.0f%%", viewModel.auraResult.dominancePercentages[0]))
+                            .font(.title3.bold())
+                            .foregroundColor(.auraAccent)
+                    }
+                }
+                
+                Text(viewModel.showFullDescription ? viewModel.primaryStory : viewModel.primaryDescription)
+                    .font(.body)
+                    .foregroundColor(.auraTextSecondary)
+                    .lineSpacing(6)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding()
+            .background(Color.auraSurface)
+            .cornerRadius(LayoutConstants.cornerRadius)
+            
+            // Secondary Color
+            if let secondaryColor = viewModel.auraResult.secondaryColor,
+               let secondaryDesc = viewModel.secondaryDescription {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack {
+                        Circle()
+                            .fill(secondaryColor.color)
+                            .frame(width: 30, height: 30)
+                        Text(secondaryColor.name + " Energy")
+                            .font(.headline)
+                            .foregroundColor(.auraText)
+                        Spacer()
+                        if viewModel.auraResult.dominancePercentages.count > 1 {
+                            Text(String(format: "%.0f%%", viewModel.auraResult.dominancePercentages[1]))
+                                .font(.headline.bold())
+                                .foregroundColor(.auraAccent)
+                        }
+                    }
+                    
+                    Text(secondaryDesc)
+                        .font(.subheadline)
+                        .foregroundColor(.auraTextSecondary)
+                        .lineSpacing(4)
+                }
+                .padding()
+                .background(Color.auraSurface)
+                .cornerRadius(LayoutConstants.cornerRadius)
+            }
+            
+            // Tertiary Color
+            if let tertiaryColor = viewModel.auraResult.tertiaryColor,
+               let tertiaryDesc = viewModel.tertiaryDescription {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack {
+                        Circle()
+                            .fill(tertiaryColor.color)
+                            .frame(width: 30, height: 30)
+                        Text(tertiaryColor.name + " Influence")
+                            .font(.headline)
+                            .foregroundColor(.auraText)
+                        Spacer()
+                        if viewModel.auraResult.dominancePercentages.count > 2 {
+                            Text(String(format: "%.0f%%", viewModel.auraResult.dominancePercentages[2]))
+                                .font(.headline.bold())
+                                .foregroundColor(.auraAccent)
+                        }
+                    }
+                    
+                    Text(tertiaryDesc)
+                        .font(.subheadline)
+                        .foregroundColor(.auraTextSecondary)
+                        .lineSpacing(4)
+                }
+                .padding()
+                .background(Color.auraSurface)
+                .cornerRadius(LayoutConstants.cornerRadius)
+            }
+            
+            // Toggle Button
+            if viewModel.canViewFullDescription {
+                Button(action: { viewModel.toggleFullDescription() }) {
+                    HStack {
+                        Image(systemName: viewModel.showFullDescription ? "chevron.up" : "chevron.down")
+                        Text(viewModel.showFullDescription ? "Show Summary" : "Read Full Description")
+                    }
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundColor(.auraAccent)
+                    .padding(.vertical, 8)
+                }
+            }
+        }
+        .padding(.horizontal, LayoutConstants.padding)
+    }
+    
+    // MARK: - Old Color Breakdown (Deprecated)
+    
+    private var colorBreakdownView_OLD: some View {
         VStack(spacing: LayoutConstants.padding) {
             Text("Color Composition")
                 .font(.headline)
@@ -145,25 +252,27 @@ struct ResultView: View {
         .padding(.horizontal, LayoutConstants.padding)
     }
     
-    // MARK: - Description
+    // MARK: - Old Description (Deprecated)
     
-    private var descriptionView: some View {
+    private var descriptionView_OLD: some View {
         VStack(alignment: .leading, spacing: LayoutConstants.padding) {
             // Primary color interpretation
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 12) {
                 HStack {
                     Circle()
                         .fill(viewModel.auraResult.primaryColor.color)
-                        .frame(width: 20, height: 20)
+                        .frame(width: 24, height: 24)
                     Text(viewModel.auraResult.primaryColor.name + " Aura")
-                        .font(.headline)
+                        .font(.title3.bold())
                         .foregroundColor(.auraText)
                 }
                 
-                Text(viewModel.primaryDescription)
+                // Story/Narrative (always shown)
+                Text(viewModel.showFullDescription ? viewModel.primaryStory : viewModel.primaryDescription)
                     .font(.body)
                     .foregroundColor(.auraTextSecondary)
-                    .lineSpacing(6)
+                    .lineSpacing(8)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             
             // Secondary color interpretation (if exists)

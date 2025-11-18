@@ -61,6 +61,13 @@ class ResultViewModel: ObservableObject {
         true
     }
     
+    var primaryStory: String {
+        return localizationService.getStory(
+            for: auraResult.primaryColor,
+            countryCode: auraResult.countryCode
+        )
+    }
+    
     // MARK: - Initialization
     
     init(auraResult: AuraResult,

@@ -35,6 +35,11 @@ struct SettingsView: View {
                                 .tag(country)
                             }
                         }
+                        .onChange(of: selectedCountry) { newValue in
+                            UserDefaults.standard.set(newValue.rawValue, forKey: UserDefaultsKeys.selectedCountryCode)
+                            LocalizationService.shared.setCountryCode(newValue.rawValue)
+                            print("✅ Country changed to: \(newValue.displayName)")
+                        }
                     } header: {
                         Text("Localization")
                     } footer: {
