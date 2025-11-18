@@ -72,13 +72,5 @@ class HapticManager {
     func buttonTap() {
         light()
     }
-    
-    func paywallPresented() {
-        medium()
-    }
-    
-    func purchaseSuccess() {
-        success()
-    }
 }
 

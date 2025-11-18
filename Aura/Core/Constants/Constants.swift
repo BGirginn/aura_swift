@@ -117,35 +117,8 @@ enum SupportedCountries: String, CaseIterable {
     }
 }
 
-// MARK: - Premium Features
-
-enum PremiumFeatures: String, CaseIterable {
-    case unlimitedScans = "unlimited_scans"
-    case longDescriptions = "long_descriptions"
-    case auraTrends = "aura_trends"
-    case noAds = "no_ads"
-    case prioritySupport = "priority_support"
-    
-    var displayName: String {
-        switch self {
-        case .unlimitedScans: return "Unlimited Scans"
-        case .longDescriptions: return "Detailed Descriptions"
-        case .auraTrends: return "Aura Trends"
-        case .noAds: return "Ad-Free Experience"
-        case .prioritySupport: return "Priority Support"
-        }
-    }
-    
-    var icon: String {
-        switch self {
-        case .unlimitedScans: return "infinity"
-        case .longDescriptions: return "doc.text"
-        case .auraTrends: return "chart.line.uptrend.xyaxis"
-        case .noAds: return "eye.slash"
-        case .prioritySupport: return "person.crop.circle.badge.checkmark"
-        }
-    }
-}
+// MARK: - Premium Features (Disabled for base version)
+// Will be added in Phase 2
 
 // MARK: - Analytics Events
 
@@ -163,9 +136,9 @@ enum AnalyticsEvent: String {
     case settingsOpened = "settings_opened"
     case paywallPresented = "paywall_presented"
     case purchaseStarted = "purchase_started"
-    case purchaseSuccess = "purchase_success"
+    case purchase_success = "purchase_success"
     case purchaseFailed = "purchase_failed"
-    case purchaseRestored = "purchase_restored"
+    case purchase_restored = "purchase_restored"
 }
 
 // MARK: - Error Messages

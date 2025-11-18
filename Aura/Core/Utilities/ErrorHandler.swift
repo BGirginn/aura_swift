@@ -113,8 +113,7 @@ struct ErrorView: View {
                 .foregroundColor(.red)
             
             Text("Error")
-                .font(.title)
-                .fontWeight(.bold)
+                .font(.title.bold())
                 .foregroundColor(.auraText)
             
             Text(error.localizedDescription)

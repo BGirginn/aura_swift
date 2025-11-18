@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// Represents the result of an aura detection scan
-struct AuraResult: Identifiable, Codable {
+struct AuraResult: Identifiable, Codable, Equatable {
     let id: UUID
     let timestamp: Date
     let primaryColor: AuraColor

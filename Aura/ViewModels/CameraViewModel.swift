@@ -25,15 +25,39 @@ class CameraViewModel: ObservableObject {
     
     private let auraDetectionService: AuraDetectionServiceProtocol
     private let dataManager: DataManager
+    let cameraService: CameraService  // Public for CameraPreviewView access
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Initialization
     
     init(auraDetectionService: AuraDetectionServiceProtocol = AuraDetectionService(),
-         dataManager: DataManager = .shared) {
+         dataManager: DataManager = .shared,
+         cameraService: CameraService = CameraService()) {
         self.auraDetectionService = auraDetectionService
         self.dataManager = dataManager
+        self.cameraService = cameraService
         checkCameraPermission()
+    }
+    
+    // MARK: - Camera Control
+    
+    func startCamera() {
+        cameraService.startSession()
+    }
+    
+    func stopCamera() {
+        cameraService.stopSession()
+    }
+    
+    func capturePhoto() {
+        isProcessing = true
+        cameraService.capturePhoto { [weak self] image in
+            guard let image = image else {
+                self?.isProcessing = false
+                return
+            }
+            self?.processImage(image)
+        }
     }
     
     // MARK: - Camera Permission
@@ -65,24 +89,47 @@ class CameraViewModel: ObservableObject {
     
     // MARK: - Image Processing
     
-    func processImage(_ image: UIImage) {
+    func processImage(_ image: UIImage, mode: AuraMode = .faceDetection) {
         isProcessing = true
         errorMessage = nil
         capturedImage = image
         
         logEvent(.scanStarted)
         
-        auraDetectionService.detectAura(from: image) { [weak self] result in
-            DispatchQueue.main.async {
-                self?.isProcessing = false
-                
-                switch result {
-                case .success(let auraResult):
-                    self?.handleSuccessfulScan(auraResult)
-                case .failure(let error):
-                    self?.handleScanError(error)
+        switch mode {
+        case .faceDetection:
+            // Use face detection mode
+            auraDetectionService.detectAura(from: image) { [weak self] result in
+                DispatchQueue.main.async {
+                    self?.isProcessing = false
+                    
+                    switch result {
+                    case .success(let auraResult):
+                        self?.handleSuccessfulScan(auraResult)
+                    case .failure(let error):
+                        self?.handleScanError(error)
+                    }
                 }
             }
+            
+        case .photoAnalysis:
+            // Use photo analysis mode (no face detection)
+            let photoAnalysisService = PhotoAnalysisService()
+            photoAnalysisService.analyzePhoto(image) { [weak self] result in
+                DispatchQueue.main.async {
+                    self?.isProcessing = false
+                    
+                    if let result = result {
+                        self?.handleSuccessfulScan(result)
+                    } else {
+                        self?.handleScanError(.processingFailed)
+                    }
+                }
+            }
+            
+        case .quiz:
+            // Quiz mode doesn't use image processing
+            break
         }
     }
     
@@ -116,60 +163,20 @@ class CameraViewModel: ObservableObject {
         ])
     }
     
-    // MARK: - Daily Limit Check
+    // MARK: - Daily Limit Check (Disabled for now)
     
     func canScanToday() -> Bool {
-        // Check if user is premium
-        let isPremium = UserDefaults.standard.bool(forKey: UserDefaultsKeys.isPremiumUser)
-        if isPremium {
-            return true
-        }
-        
-        // Check daily scan count
-        let today = Calendar.current.startOfDay(for: Date())
-        let lastScanDate = UserDefaults.standard.object(forKey: UserDefaultsKeys.lastScanDate) as? Date
-        let dailyScanCount = UserDefaults.standard.integer(forKey: UserDefaultsKeys.dailyScanCount)
-        
-        if let lastScanDate = lastScanDate,
-           Calendar.current.isDate(lastScanDate, inSameDayAs: today) {
-            return dailyScanCount < ScanLimits.freeDailyLimit
-        }
-        
-        // New day, reset counter
+        // Always return true for base version
         return true
     }
     
     func incrementDailyCount() {
-        let today = Calendar.current.startOfDay(for: Date())
-        let lastScanDate = UserDefaults.standard.object(forKey: UserDefaultsKeys.lastScanDate) as? Date
-        
-        if let lastScanDate = lastScanDate,
-           Calendar.current.isDate(lastScanDate, inSameDayAs: today) {
-            let currentCount = UserDefaults.standard.integer(forKey: UserDefaultsKeys.dailyScanCount)
-            UserDefaults.standard.set(currentCount + 1, forKey: UserDefaultsKeys.dailyScanCount)
-        } else {
-            // New day
-            UserDefaults.standard.set(1, forKey: UserDefaultsKeys.dailyScanCount)
-            UserDefaults.standard.set(today, forKey: UserDefaultsKeys.lastScanDate)
-        }
+        // Disabled for base version
     }
     
     func getRemainingScans() -> Int {
-        let isPremium = UserDefaults.standard.bool(forKey: UserDefaultsKeys.isPremiumUser)
-        if isPremium {
-            return Int.max
-        }
-        
-        let today = Calendar.current.startOfDay(for: Date())
-        let lastScanDate = UserDefaults.standard.object(forKey: UserDefaultsKeys.lastScanDate) as? Date
-        let dailyScanCount = UserDefaults.standard.integer(forKey: UserDefaultsKeys.dailyScanCount)
-        
-        if let lastScanDate = lastScanDate,
-           Calendar.current.isDate(lastScanDate, inSameDayAs: today) {
-            return max(0, ScanLimits.freeDailyLimit - dailyScanCount)
-        }
-        
-        return ScanLimits.freeDailyLimit
+        // Always return unlimited for base version
+        return Int.max
     }
     
     // MARK: - Analytics

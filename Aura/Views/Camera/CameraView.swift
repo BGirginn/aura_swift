@@ -13,10 +13,12 @@ struct CameraView: View {
     @StateObject private var viewModel: CameraViewModel
     @StateObject private var coordinator: AppCoordinator
     @State private var showImagePicker = false
+    let mode: AuraMode
     
-    init(coordinator: AppCoordinator, viewModel: CameraViewModel = CameraViewModel()) {
+    init(coordinator: AppCoordinator, mode: AuraMode, viewModel: CameraViewModel = CameraViewModel()) {
         _coordinator = StateObject(wrappedValue: coordinator)
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.mode = mode
     }
     
     var body: some View {
@@ -50,11 +52,7 @@ struct CameraView: View {
             }
         }
         .sheet(isPresented: $showImagePicker) {
-            ImagePicker(image: $viewModel.capturedImage, onImagePicked: { image in
-                if let image = image {
-                    viewModel.processImage(image)
-                }
-            })
+            ImagePicker(image: $viewModel.capturedImage, onImagePicked: handleGalleryPick)
         }
         .onChange(of: viewModel.detectedAuraResult) { result in
             if let result = result {
@@ -68,10 +66,20 @@ struct CameraView: View {
     
     private var headerView: some View {
         HStack {
-            Text("Aura Scanner")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(.auraText)
+            Button(action: { coordinator.showModeSelection() }) {
+                Image(systemName: "chevron.left")
+                    .font(.title2)
+                    .foregroundColor(.auraText)
+            }
+            
+            VStack(alignment: .leading) {
+                Text(modeTitle)
+                    .font(.headline.bold())
+                    .foregroundColor(.auraText)
+                Text(modeSubtitle)
+                    .font(.caption)
+                    .foregroundColor(.auraTextSecondary)
+            }
             
             Spacer()
             
@@ -91,24 +99,40 @@ struct CameraView: View {
         .padding(.top, LayoutConstants.padding)
     }
     
+    private var modeTitle: String {
+        let language = Locale.current.languageCode ?? "en"
+        return language.hasPrefix("tr") ? mode.displayNameTR : mode.displayName
+    }
+    
+    private var modeSubtitle: String {
+        switch mode {
+        case .faceDetection:
+            return "Position your face in center"
+        case .photoAnalysis:
+            return "Capture your outfit or environment"
+        default:
+            return ""
+        }
+    }
+    
     // MARK: - Camera Content
     
     private var cameraContentView: some View {
         VStack(spacing: LayoutConstants.largePadding) {
-            // Camera preview placeholder
-            RoundedRectangle(cornerRadius: LayoutConstants.cornerRadius)
-                .fill(Color.auraSurface)
-                .frame(height: 400)
+            // Real Camera preview
+            CameraPreviewView(session: viewModel.cameraService.session)
+                .frame(height: 500)
+                .cornerRadius(LayoutConstants.cornerRadius)
                 .overlay(
                     VStack {
-                        Image(systemName: "camera.fill")
-                            .font(.system(size: 60))
-                            .foregroundColor(.auraTextSecondary)
-                        
+                        Spacer()
                         Text("Position your face in the center")
-                            .font(.headline)
-                            .foregroundColor(.auraTextSecondary)
-                            .padding(.top)
+                            .font(.caption)
+                            .foregroundColor(.white)
+                            .padding(8)
+                            .background(Color.black.opacity(0.6))
+                            .cornerRadius(8)
+                            .padding(.bottom, 8)
                     }
                 )
                 .padding(.horizontal, LayoutConstants.padding)
@@ -117,6 +141,12 @@ struct CameraView: View {
             if !viewModel.isProcessing {
                 remainingScansView
             }
+        }
+        .onAppear {
+            viewModel.startCamera()
+        }
+        .onDisappear {
+            viewModel.stopCamera()
         }
     }
     
@@ -129,8 +159,7 @@ struct CameraView: View {
                 .foregroundColor(.auraAccent)
             
             Text("Camera Access Required")
-                .font(.title2)
-                .fontWeight(.bold)
+                .font(.title2.bold())
                 .foregroundColor(.auraText)
             
             Text("We need access to your camera to scan your aura")
@@ -168,27 +197,12 @@ struct CameraView: View {
     // MARK: - Remaining Scans
     
     private var remainingScansView: some View {
-        let remainingScans = viewModel.getRemainingScans()
-        
-        return HStack {
-            Image(systemName: remainingScans == Int.max ? "infinity" : "camera.fill")
+        HStack {
+            Image(systemName: "infinity")
                 .foregroundColor(.auraAccent)
             
-            Text(remainingScans == Int.max ? "Unlimited Scans" : "\(remainingScans) scans remaining today")
+            Text("Unlimited Scans")
                 .foregroundColor(.auraTextSecondary)
-            
-            if remainingScans != Int.max {
-                Button(action: { coordinator.showPaywall() }) {
-                    Text("Upgrade")
-                        .font(.caption)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.auraAccent)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 6)
-                        .background(Color.auraAccent.opacity(0.2))
-                        .cornerRadius(LayoutConstants.smallCornerRadius)
-                }
-            }
         }
         .padding()
         .background(Color.auraSurface)
@@ -199,62 +213,94 @@ struct CameraView: View {
     // MARK: - Bottom Controls
     
     private var bottomControlsView: some View {
-        HStack(spacing: LayoutConstants.largePadding) {
-            // Gallery button
-            Button(action: { showImagePicker = true }) {
-                Image(systemName: "photo.on.rectangle")
-                    .font(.title)
-                    .foregroundColor(.auraAccent)
-                    .frame(width: 60, height: 60)
-                    .background(Color.auraSurface)
-                    .clipShape(Circle())
+        VStack(spacing: LayoutConstants.padding) {
+            // Debug test buttons (if debug mode enabled)
+            #if DEBUG
+            if DebugManager.shared.isDebugMode {
+                debugTestButtonsView
             }
+            #endif
             
-            // Capture button
-            Button(action: handleCapture) {
-                if viewModel.isProcessing {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                        .frame(width: 80, height: 80)
-                } else {
-                    Circle()
-                        .stroke(Color.auraAccent, lineWidth: 4)
-                        .frame(width: 80, height: 80)
-                        .overlay(
-                            Circle()
-                                .fill(Color.auraAccent)
-                                .frame(width: 64, height: 64)
-                        )
+            HStack(spacing: LayoutConstants.largePadding) {
+                // Gallery button
+                Button(action: { showImagePicker = true }) {
+                    Image(systemName: "photo.on.rectangle")
+                        .font(.title)
+                        .foregroundColor(.auraAccent)
+                        .frame(width: 60, height: 60)
+                        .background(Color.auraSurface)
+                        .clipShape(Circle())
                 }
-            }
-            .disabled(viewModel.isProcessing || !viewModel.canScanToday())
-            
-            // Info button
-            Button(action: {}) {
-                Image(systemName: "info.circle")
-                    .font(.title)
-                    .foregroundColor(.auraAccent)
-                    .frame(width: 60, height: 60)
-                    .background(Color.auraSurface)
-                    .clipShape(Circle())
+                
+                // Capture button (from camera)
+                Button(action: handleCameraCapture) {
+                    if viewModel.isProcessing {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                            .frame(width: 80, height: 80)
+                    } else {
+                        Circle()
+                            .stroke(Color.auraAccent, lineWidth: 4)
+                            .frame(width: 80, height: 80)
+                            .overlay(
+                                Circle()
+                                    .fill(Color.auraAccent)
+                                    .frame(width: 64, height: 64)
+                            )
+                    }
+                }
+                .disabled(viewModel.isProcessing)
+                
+                // Flip camera button
+                Button(action: {}) {
+                    Image(systemName: "camera.rotate")
+                        .font(.title)
+                        .foregroundColor(.auraAccent)
+                        .frame(width: 60, height: 60)
+                        .background(Color.auraSurface)
+                        .clipShape(Circle())
+                }
             }
         }
         .padding(.bottom, LayoutConstants.largePadding)
     }
     
+    // MARK: - Debug Test Buttons
+    
+    private var debugTestButtonsView: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(DebugManager.shared.getAllTestColors(), id: \.color.id) { item in
+                    Button(action: {
+                        let testResult = DebugManager.shared.generateSampleResult(colorType: item.color)
+                        coordinator.showResult(testResult)
+                    }) {
+                        Text(item.name)
+                            .font(.caption)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 6)
+                            .background(item.color.color)
+                            .cornerRadius(12)
+                    }
+                }
+            }
+            .padding(.horizontal, LayoutConstants.padding)
+        }
+    }
+    
     // MARK: - Actions
     
-    private func handleCapture() {
-        guard viewModel.canScanToday() else {
-            coordinator.showPaywall()
-            return
-        }
-        
-        viewModel.incrementDailyCount()
-        
-        // Simulate capture (in real implementation, this would capture from camera)
-        // For now, open image picker
-        showImagePicker = true
+    private func handleCameraCapture() {
+        // Capture from camera
+        HapticManager.shared.scanStarted()
+        viewModel.capturePhoto()
+    }
+    
+    private func handleGalleryPick(image: UIImage?) {
+        guard let image = image else { return }
+        HapticManager.shared.scanStarted()
+        viewModel.processImage(image, mode: mode)
     }
 }
 
@@ -287,8 +333,11 @@ struct ImagePicker: UIViewControllerRepresentable {
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let image = info[.originalImage] as? UIImage {
+                print("✅ Image picked: \(image.size)")
                 parent.image = image
-                parent.onImagePicked(image)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.parent.onImagePicked(image)
+                }
             }
             parent.presentationMode.wrappedValue.dismiss()
         }
@@ -303,7 +352,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 struct CameraView_Previews: PreviewProvider {
     static var previews: some View {
-        CameraView(coordinator: AppCoordinator())
+        CameraView(coordinator: AppCoordinator(), mode: .faceDetection)
     }
 }
 

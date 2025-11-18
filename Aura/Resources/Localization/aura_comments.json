@@ -41,6 +41,13 @@
         "long": "Turuncu aura yaratıcılığı, coşkuyu ve sosyal enerjiyi gösterir. Maceracısınız ve yeni deneyimleri seviyorsunuz. Sıcaklığınız insanları size çeker.",
         "traits": ["Yaratıcı", "Coşkulu", "Sosyal", "Maceracı", "Sıcakkanlı"],
         "advice": "Yaratıcılığınızı özgürce ifade edin. Yeni deneyimlere ve bağlantılara açık kalın."
+      },
+      "US": {
+        "countryCode": "US",
+        "short": "Creativity and vitality",
+        "long": "Your orange aura radiates creative energy and infectious enthusiasm. You're a natural motivator who inspires others with your adventurous spirit.",
+        "traits": ["Creative", "Energetic", "Social", "Fun-loving", "Spontaneous"],
+        "advice": "Channel your creative energy into projects. Share your enthusiasm with others."
       }
     }
   },
@@ -79,6 +86,13 @@
         "long": "Yeşil aura büyümeyi, dengeyi ve şifa enerjisini temsil eder. Doğal bir şifacı ve barış getiricisisiniz. Varlığınız sakinlik ve yenilenme getirir.",
         "traits": ["Dengeli", "Şifacı", "Besleyici", "Huzurlu", "Gelişen"],
         "advice": "Kendinizi ve başkalarını beslemeye devam edin. Doğayla bağlantınızı koruyun."
+      },
+      "US": {
+        "countryCode": "US",
+        "short": "Balance and healing",
+        "long": "Your green aura reflects natural balance and healing abilities. You bring peace wherever you go and have a gift for helping others grow.",
+        "traits": ["Balanced", "Healer", "Compassionate", "Natural", "Grounded"],
+        "advice": "Trust your healing instincts. Spend time in nature to recharge your energy."
       }
     }
   },

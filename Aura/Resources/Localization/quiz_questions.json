@@ -1,0 +1,416 @@
+[
+  {
+    "id": "q1",
+    "category": "emotional",
+    "questionEN": "When facing a stressful situation, you usually...",
+    "questionTR": "Stresli bir durumla karşılaştığında genellikle...",
+    "answers": [
+      {
+        "id": "q1_a1",
+        "textEN": "Take immediate action to solve it",
+        "textTR": "Hemen harekete geçer ve çözerim",
+        "primaryColor": "aura_red",
+        "secondaryColor": "aura_orange",
+        "weight": 3.0
+      },
+      {
+        "id": "q1_a2",
+        "textEN": "Stay calm and think through solutions",
+        "textTR": "Sakin kalır ve çözümleri düşünürüm",
+        "primaryColor": "aura_blue",
+        "secondaryColor": "aura_green",
+        "weight": 3.0
+      },
+      {
+        "id": "q1_a3",
+        "textEN": "Find creative and unique approaches",
+        "textTR": "Yaratıcı ve özgün yaklaşımlar bulurum",
+        "primaryColor": "aura_orange",
+        "secondaryColor": "aura_yellow",
+        "weight": 3.0
+      },
+      {
+        "id": "q1_a4",
+        "textEN": "Analyze the situation logically",
+        "textTR": "Durumu mantıksal olarak analiz ederim",
+        "primaryColor": "aura_yellow",
+        "secondaryColor": "aura_blue",
+        "weight": 3.0
+      }
+    ]
+  },
+  {
+    "id": "q2",
+    "category": "energy",
+    "questionEN": "What activities energize you the most?",
+    "questionTR": "Hangi aktiviteler seni en çok enerjilendiriyor?",
+    "answers": [
+      {
+        "id": "q2_a1",
+        "textEN": "Physical activities and competitions",
+        "textTR": "Fiziksel aktiviteler ve yarışmalar",
+        "primaryColor": "aura_red",
+        "weight": 3.0
+      },
+      {
+        "id": "q2_a2",
+        "textEN": "Creative and artistic projects",
+        "textTR": "Yaratıcı ve sanatsal projeler",
+        "primaryColor": "aura_orange",
+        "weight": 3.0
+      },
+      {
+        "id": "q2_a3",
+        "textEN": "Learning and intellectual exercises",
+        "textTR": "Öğrenme ve zihinsel egzersizler",
+        "primaryColor": "aura_yellow",
+        "weight": 3.0
+      },
+      {
+        "id": "q2_a4",
+        "textEN": "Spending time in nature",
+        "textTR": "Doğada vakit geçirmek",
+        "primaryColor": "aura_green",
+        "weight": 3.0
+      },
+      {
+        "id": "q2_a5",
+        "textEN": "Meditation and spiritual practices",
+        "textTR": "Meditasyon ve ruhsal pratikler",
+        "primaryColor": "aura_purple",
+        "weight": 3.0
+      }
+    ]
+  },
+  {
+    "id": "q3",
+    "category": "emotional",
+    "questionEN": "How do you feel in crowded social settings?",
+    "questionTR": "Kalabalık sosyal ortamlarda kendini nasıl hissedersin?",
+    "answers": [
+      {
+        "id": "q3_a1",
+        "textEN": "Excited and energized, I love the buzz",
+        "textTR": "Heyecanlı ve enerjik, kalabalığı severim",
+        "primaryColor": "aura_orange",
+        "secondaryColor": "aura_red",
+        "weight": 2.5
+      },
+      {
+        "id": "q3_a2",
+        "textEN": "Comfortable, I enjoy meaningful conversations",
+        "textTR": "Rahat, anlamlı sohbetlerin tadını çıkarırım",
+        "primaryColor": "aura_blue",
+        "secondaryColor": "aura_green",
+        "weight": 2.5
+      },
+      {
+        "id": "q3_a3",
+        "textEN": "Drained, I prefer smaller gatherings",
+        "textTR": "Yorulmuş, daha küçük toplantıları tercih ederim",
+        "primaryColor": "aura_purple",
+        "secondaryColor": "aura_blue",
+        "weight": 2.5
+      },
+      {
+        "id": "q3_a4",
+        "textEN": "Observant, I analyze people and dynamics",
+        "textTR": "Gözlemci, insanları ve dinamikleri analiz ederim",
+        "primaryColor": "aura_yellow",
+        "weight": 2.5
+      }
+    ]
+  },
+  {
+    "id": "q4",
+    "category": "decision",
+    "questionEN": "When making important decisions, you rely on...",
+    "questionTR": "Önemli kararlar verirken neye güvenirsin?",
+    "answers": [
+      {
+        "id": "q4_a1",
+        "textEN": "My gut feeling and instinct",
+        "textTR": "İçgüdülerim ve sezgilerim",
+        "primaryColor": "aura_purple",
+        "secondaryColor": "aura_blue",
+        "weight": 3.0
+      },
+      {
+        "id": "q4_a2",
+        "textEN": "Logical analysis and facts",
+        "textTR": "Mantıksal analiz ve gerçekler",
+        "primaryColor": "aura_yellow",
+        "weight": 3.0
+      },
+      {
+        "id": "q4_a3",
+        "textEN": "Past experiences and patterns",
+        "textTR": "Geçmiş deneyimler ve örüntüler",
+        "primaryColor": "aura_green",
+        "weight": 3.0
+      },
+      {
+        "id": "q4_a4",
+        "textEN": "Bold action and quick thinking",
+        "textTR": "Cesur aksiyon ve hızlı düşünme",
+        "primaryColor": "aura_red",
+        "weight": 3.0
+      }
+    ]
+  },
+  {
+    "id": "q5",
+    "category": "energy",
+    "questionEN": "Your energy level in the morning is typically...",
+    "questionTR": "Sabahları enerji seviyen genellikle nasıl?",
+    "answers": [
+      {
+        "id": "q5_a1",
+        "textEN": "High! I'm ready to conquer the day",
+        "textTR": "Yüksek! Günü fethetmeye hazırım",
+        "primaryColor": "aura_red",
+        "secondaryColor": "aura_orange",
+        "weight": 2.5
+      },
+      {
+        "id": "q5_a2",
+        "textEN": "Bright and optimistic",
+        "textTR": "Parlak ve iyimser",
+        "primaryColor": "aura_yellow",
+        "weight": 2.5
+      },
+      {
+        "id": "q5_a3",
+        "textEN": "Calm and steady",
+        "textTR": "Sakin ve dengeli",
+        "primaryColor": "aura_green",
+        "secondaryColor": "aura_blue",
+        "weight": 2.5
+      },
+      {
+        "id": "q5_a4",
+        "textEN": "Low, I need time to wake up",
+        "textTR": "Düşük, uyanmak için zamana ihtiyacım var",
+        "primaryColor": "aura_blue",
+        "secondaryColor": "aura_purple",
+        "weight": 2.5
+      }
+    ]
+  },
+  {
+    "id": "q6",
+    "category": "relationship",
+    "questionEN": "What's most important in your relationships?",
+    "questionTR": "İlişkilerinde en önemli olan nedir?",
+    "answers": [
+      {
+        "id": "q6_a1",
+        "textEN": "Passion and excitement",
+        "textTR": "Tutku ve heyecan",
+        "primaryColor": "aura_red",
+        "secondaryColor": "aura_pink",
+        "weight": 2.5
+      },
+      {
+        "id": "q6_a2",
+        "textEN": "Deep emotional connection",
+        "textTR": "Derin duygusal bağ",
+        "primaryColor": "aura_pink",
+        "secondaryColor": "aura_purple",
+        "weight": 2.5
+      },
+      {
+        "id": "q6_a3",
+        "textEN": "Honest communication",
+        "textTR": "Dürüst iletişim",
+        "primaryColor": "aura_blue",
+        "weight": 2.5
+      },
+      {
+        "id": "q6_a4",
+        "textEN": "Mutual growth and support",
+        "textTR": "Karşılıklı büyüme ve destek",
+        "primaryColor": "aura_green",
+        "weight": 2.5
+      },
+      {
+        "id": "q6_a5",
+        "textEN": "Fun and adventure together",
+        "textTR": "Birlikte eğlence ve macera",
+        "primaryColor": "aura_orange",
+        "weight": 2.5
+      }
+    ]
+  },
+  {
+    "id": "q7",
+    "category": "energy",
+    "questionEN": "How do you prefer to spend your free time?",
+    "questionTR": "Boş zamanını nasıl geçirmeyi tercih edersin?",
+    "answers": [
+      {
+        "id": "q7_a1",
+        "textEN": "Active sports or physical challenges",
+        "textTR": "Aktif sporlar veya fiziksel zorluklar",
+        "primaryColor": "aura_red",
+        "weight": 2.5
+      },
+      {
+        "id": "q7_a2",
+        "textEN": "Creative hobbies and art",
+        "textTR": "Yaratıcı hobiler ve sanat",
+        "primaryColor": "aura_orange",
+        "weight": 2.5
+      },
+      {
+        "id": "q7_a3",
+        "textEN": "Reading and learning new things",
+        "textTR": "Okuma ve yeni şeyler öğrenme",
+        "primaryColor": "aura_yellow",
+        "weight": 2.5
+      },
+      {
+        "id": "q7_a4",
+        "textEN": "Relaxing in nature or gardening",
+        "textTR": "Doğada dinlenmek veya bahçeyle uğraşmak",
+        "primaryColor": "aura_green",
+        "weight": 2.5
+      },
+      {
+        "id": "q7_a5",
+        "textEN": "Meditation or spiritual practices",
+        "textTR": "Meditasyon veya ruhsal pratikler",
+        "primaryColor": "aura_purple",
+        "weight": 2.5
+      }
+    ]
+  },
+  {
+    "id": "q8",
+    "category": "decision",
+    "questionEN": "When faced with uncertainty, you...",
+    "questionTR": "Belirsizlikle karşılaştığında...",
+    "answers": [
+      {
+        "id": "q8_a1",
+        "textEN": "Trust my intuition completely",
+        "textTR": "Sezgilerime tamamen güvenirim",
+        "primaryColor": "aura_purple",
+        "weight": 3.0
+      },
+      {
+        "id": "q8_a2",
+        "textEN": "Research and gather more information",
+        "textTR": "Araştırır ve daha fazla bilgi toplarım",
+        "primaryColor": "aura_yellow",
+        "weight": 3.0
+      },
+      {
+        "id": "q8_a3",
+        "textEN": "Take a calculated risk",
+        "textTR": "Hesaplı bir risk alırım",
+        "primaryColor": "aura_red",
+        "weight": 3.0
+      },
+      {
+        "id": "q8_a4",
+        "textEN": "Wait and see how things develop",
+        "textTR": "Bekler ve işlerin nasıl geliştiğini görürüm",
+        "primaryColor": "aura_blue",
+        "secondaryColor": "aura_green",
+        "weight": 3.0
+      }
+    ]
+  },
+  {
+    "id": "q9",
+    "category": "emotional",
+    "questionEN": "What best describes your emotional expression?",
+    "questionTR": "Duygusal ifaden en iyi nasıl tanımlanır?",
+    "answers": [
+      {
+        "id": "q9_a1",
+        "textEN": "Intense and passionate",
+        "textTR": "Yoğun ve tutkulu",
+        "primaryColor": "aura_red",
+        "weight": 2.5
+      },
+      {
+        "id": "q9_a2",
+        "textEN": "Warm and affectionate",
+        "textTR": "Sıcak ve sevecen",
+        "primaryColor": "aura_pink",
+        "secondaryColor": "aura_orange",
+        "weight": 2.5
+      },
+      {
+        "id": "q9_a3",
+        "textEN": "Calm and measured",
+        "textTR": "Sakin ve ölçülü",
+        "primaryColor": "aura_blue",
+        "weight": 2.5
+      },
+      {
+        "id": "q9_a4",
+        "textEN": "Joyful and enthusiastic",
+        "textTR": "Neşeli ve coşkulu",
+        "primaryColor": "aura_yellow",
+        "secondaryColor": "aura_orange",
+        "weight": 2.5
+      },
+      {
+        "id": "q9_a5",
+        "textEN": "Peaceful and harmonious",
+        "textTR": "Huzurlu ve uyumlu",
+        "primaryColor": "aura_green",
+        "weight": 2.5
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "category": "relationship",
+    "questionEN": "Friends would describe you as...",
+    "questionTR": "Arkadaşların seni nasıl tanımlar?",
+    "answers": [
+      {
+        "id": "q10_a1",
+        "textEN": "The leader and motivator",
+        "textTR": "Lider ve motive edici",
+        "primaryColor": "aura_red",
+        "weight": 3.0
+      },
+      {
+        "id": "q10_a2",
+        "textEN": "The creative and fun one",
+        "textTR": "Yaratıcı ve eğlenceli olan",
+        "primaryColor": "aura_orange",
+        "weight": 3.0
+      },
+      {
+        "id": "q10_a3",
+        "textEN": "The wise advisor",
+        "textTR": "Bilge danışman",
+        "primaryColor": "aura_yellow",
+        "secondaryColor": "aura_purple",
+        "weight": 3.0
+      },
+      {
+        "id": "q10_a4",
+        "textEN": "The peacemaker and healer",
+        "textTR": "Barış getirici ve şifacı",
+        "primaryColor": "aura_green",
+        "secondaryColor": "aura_pink",
+        "weight": 3.0
+      },
+      {
+        "id": "q10_a5",
+        "textEN": "The calm and supportive listener",
+        "textTR": "Sakin ve destekleyici dinleyici",
+        "primaryColor": "aura_blue",
+        "weight": 3.0
+      }
+    ]
+  }
+]
+

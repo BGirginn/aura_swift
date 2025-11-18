@@ -14,16 +14,18 @@ class AppCoordinator: ObservableObject {
     // MARK: - Published Properties
     
     @Published var currentScreen: Screen = .onboarding
-    @Published var isShowingPaywall = false
     @Published var isShowingSettings = false
     @Published var selectedHistoryItem: AuraResult?
+    @Published var selectedMode: AuraMode = .faceDetection
     
     // MARK: - Screen Enum
     
     enum Screen: Equatable {
         case onboarding
-        case camera
-        case result(AuraResult)
+        case modeSelection
+        case quiz
+        case camera(AuraMode)
+        case result(AuraResult, AuraMode?)
         case history
     }
     
@@ -33,24 +35,34 @@ class AppCoordinator: ObservableObject {
         currentScreen = .onboarding
     }
     
-    func showCamera() {
-        currentScreen = .camera
+    func showModeSelection() {
+        currentScreen = .modeSelection
     }
     
-    func showResult(_ result: AuraResult) {
-        currentScreen = .result(result)
+    func selectMode(_ mode: AuraMode) {
+        selectedMode = mode
+        switch mode {
+        case .quiz:
+            currentScreen = .quiz
+        case .photoAnalysis, .faceDetection:
+            currentScreen = .camera(mode)
+        }
+    }
+    
+    func showCamera() {
+        currentScreen = .camera(selectedMode)
+    }
+    
+    func showQuiz() {
+        currentScreen = .quiz
+    }
+    
+    func showResult(_ result: AuraResult, mode: AuraMode? = nil) {
+        currentScreen = .result(result, mode ?? selectedMode)
     }
     
     func showHistory() {
         currentScreen = .history
-    }
-    
-    func showPaywall() {
-        isShowingPaywall = true
-    }
-    
-    func dismissPaywall() {
-        isShowingPaywall = false
     }
     
     func showSettings() {
@@ -78,7 +90,7 @@ class AppCoordinator: ObservableObject {
         set {
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.hasCompletedOnboarding)
             if newValue {
-                showCamera()
+                showModeSelection()
             }
         }
     }
@@ -88,7 +100,7 @@ class AppCoordinator: ObservableObject {
     init() {
         // Determine initial screen based on onboarding status
         if hasCompletedOnboarding {
-            currentScreen = .camera
+            currentScreen = .modeSelection
         } else {
             currentScreen = .onboarding
         }
@@ -100,7 +112,7 @@ class AppCoordinator: ObservableObject {
 extension AppCoordinator {
     static var preview: AppCoordinator {
         let coordinator = AppCoordinator()
-        coordinator.currentScreen = .camera
+        coordinator.currentScreen = .modeSelection
         return coordinator
     }
 }

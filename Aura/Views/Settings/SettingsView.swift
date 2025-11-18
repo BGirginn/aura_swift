@@ -13,6 +13,7 @@ struct SettingsView: View {
     @State private var selectedCountry: SupportedCountries = .usa
     @State private var notificationsEnabled = false
     @State private var isPremium = false
+    @State private var debugMode = false
     
     var body: some View {
         NavigationView {
@@ -21,42 +22,7 @@ struct SettingsView: View {
                 
                 List {
                     // Account Section
-                    Section {
-                        HStack {
-                            Image(systemName: "person.circle.fill")
-                                .font(.title)
-                                .foregroundColor(.auraAccent)
-                            
-                            VStack(alignment: .leading) {
-                                Text("Account Status")
-                                    .font(.headline)
-                                Text(isPremium ? "Premium Member" : "Free User")
-                                    .font(.caption)
-                                    .foregroundColor(.auraTextSecondary)
-                            }
-                            
-                            Spacer()
-                            
-                            if !isPremium {
-                                Button("Upgrade") {
-                                    // Show paywall
-                                }
-                                .font(.caption)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 6)
-                                .background(Color.auraAccent)
-                                .cornerRadius(LayoutConstants.smallCornerRadius)
-                            } else {
-                                Image(systemName: "crown.fill")
-                                    .foregroundColor(.yellow)
-                            }
-                        }
-                    } header: {
-                        Text("Account")
-                    }
-                    .listRowBackground(Color.auraSurface)
+                    // Account section removed for base version
                     
                     // Region Settings
                     Section {
@@ -85,6 +51,21 @@ struct SettingsView: View {
                         Text("Receive daily reminders to scan your aura")
                     }
                     .listRowBackground(Color.auraSurface)
+                    
+                    // Debug Mode (Debug builds only)
+                    #if DEBUG
+                    Section {
+                        Toggle("Debug/Test Mode", isOn: $debugMode)
+                            .onChange(of: debugMode) { newValue in
+                                DebugManager.shared.isDebugMode = newValue
+                            }
+                    } header: {
+                        Text("Developer")
+                    } footer: {
+                        Text("Enable test buttons to quickly test different aura colors without camera")
+                    }
+                    .listRowBackground(Color.auraSurface)
+                    #endif
                     
                     // About
                     Section {
@@ -121,7 +102,6 @@ struct SettingsView: View {
                     }
                     .listRowBackground(Color.auraSurface)
                 }
-                .scrollContentBackground(.hidden)
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
@@ -146,6 +126,10 @@ struct SettingsView: View {
         }
         
         isPremium = UserDefaults.standard.bool(forKey: UserDefaultsKeys.isPremiumUser)
+        
+        #if DEBUG
+        debugMode = DebugManager.shared.isDebugMode
+        #endif
     }
 }
 

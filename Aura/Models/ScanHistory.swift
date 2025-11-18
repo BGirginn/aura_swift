@@ -90,8 +90,7 @@ extension ScanHistory {
 
 // MARK: - Identifiable Conformance
 extension ScanHistory: Identifiable {
-    public var objectID: NSManagedObjectID {
-        return self.objectID
-    }
+    // NSManagedObject already has objectID property
+    // No need to override, already Identifiable
 }
 

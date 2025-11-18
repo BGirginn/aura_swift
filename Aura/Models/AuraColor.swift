@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 /// Represents an aura color with its characteristics and localized descriptions
-struct AuraColor: Identifiable, Codable, Equatable {
+struct AuraColor: Identifiable, Codable, Equatable, Hashable {
     let id: String
     let name: String
     let hueRange: ClosedRange<Double>
@@ -20,7 +20,7 @@ struct AuraColor: Identifiable, Codable, Equatable {
     // Localized descriptions will be loaded from JSON
     var localizedDescriptions: [String: LocalizedDescription]
     
-    struct LocalizedDescription: Codable, Equatable {
+    struct LocalizedDescription: Codable, Equatable, Hashable {
         let countryCode: String
         let shortDescription: String
         let longDescription: String

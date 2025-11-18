@@ -57,7 +57,8 @@ class ResultViewModel: ObservableObject {
     }
     
     var canViewFullDescription: Bool {
-        UserDefaults.standard.bool(forKey: UserDefaultsKeys.isPremiumUser)
+        // Always true for base version
+        true
     }
     
     // MARK: - Initialization
@@ -73,12 +74,8 @@ class ResultViewModel: ObservableObject {
     // MARK: - Actions
     
     func toggleFullDescription() {
-        if canViewFullDescription {
-            showFullDescription.toggle()
-        } else {
-            // Show paywall
-            NotificationCenter.default.post(name: Notification.Name("showPaywall"), object: nil)
-        }
+        // Always allow for base version
+        showFullDescription.toggle()
     }
     
     func saveResult() {

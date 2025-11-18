@@ -13,10 +13,12 @@ struct ResultView: View {
     @StateObject private var coordinator: AppCoordinator
     @State private var showShareSheet = false
     @State private var shareImage: UIImage?
+    let mode: AuraMode?
     
-    init(result: AuraResult, coordinator: AppCoordinator) {
+    init(result: AuraResult, coordinator: AppCoordinator, mode: AuraMode? = nil) {
         _viewModel = StateObject(wrappedValue: ResultViewModel(auraResult: result))
         _coordinator = StateObject(wrappedValue: coordinator)
+        self.mode = mode
     }
     
     var body: some View {
@@ -57,7 +59,13 @@ struct ResultView: View {
     
     private var headerView: some View {
         HStack {
-            Button(action: { coordinator.showCamera() }) {
+            Button(action: { 
+                if mode == .quiz {
+                    coordinator.showModeSelection()
+                } else {
+                    coordinator.showCamera()
+                }
+            }) {
                 Image(systemName: "xmark")
                     .font(.title2)
                     .foregroundColor(.auraText)
@@ -65,9 +73,8 @@ struct ResultView: View {
             
             Spacer()
             
-            Text("Your Aura")
-                .font(.title2)
-                .fontWeight(.bold)
+            Text(resultTitle)
+                .font(.title2.bold())
                 .foregroundColor(.auraText)
             
             Spacer()
@@ -81,41 +88,22 @@ struct ResultView: View {
         .padding(.horizontal, LayoutConstants.padding)
     }
     
+    private var resultTitle: String {
+        let language = Locale.current.languageCode ?? "en"
+        if language.hasPrefix("tr") {
+            return mode?.resultTitleTR ?? "Auranız"
+        } else {
+            return mode?.resultTitle ?? "Your Aura"
+        }
+    }
+    
     // MARK: - Aura Rings
     
     private var auraRingsView: some View {
-        ZStack {
-            // Background glow
-            ForEach(viewModel.auraResult.dominantColors.indices, id: \.self) { index in
-                let color = viewModel.auraResult.dominantColors[index]
-                Circle()
-                    .fill(
-                        RadialGradient(
-                            colors: [color.color.opacity(0.3), Color.clear],
-                            center: .center,
-                            startRadius: 50,
-                            endRadius: 150 + CGFloat(index * 30)
-                        )
-                    )
-                    .frame(width: 300 + CGFloat(index * 60), height: 300 + CGFloat(index * 60))
-                    .blur(radius: 20)
-            }
-            
-            // Rings
-            ForEach(viewModel.auraResult.dominantColors.indices, id: \.self) { index in
-                let color = viewModel.auraResult.dominantColors[index]
-                Circle()
-                    .stroke(color.color, lineWidth: AuraRingConstants.ringWidth)
-                    .frame(width: 200 + CGFloat(index * 60), height: 200 + CGFloat(index * 60))
-                    .shadow(color: color.color.opacity(0.5), radius: 10)
-            }
-            
-            // Center icon
-            Image(systemName: "sparkles")
-                .font(.system(size: 40))
-                .foregroundColor(.white)
-        }
-        .frame(height: 400)
+        AuraRingsView(
+            auraColors: viewModel.auraResult.dominantColors,
+            dominancePercentages: viewModel.auraResult.dominancePercentages
+        )
         .padding(.vertical, LayoutConstants.padding)
     }
     
@@ -145,8 +133,7 @@ struct ResultView: View {
                     // Percentage
                     if index < viewModel.auraResult.dominancePercentages.count {
                         Text(String(format: "%.0f%%", viewModel.auraResult.dominancePercentages[index]))
-                            .font(.body)
-                            .fontWeight(.semibold)
+                            .font(.body.weight(.semibold))
                             .foregroundColor(.auraAccent)
                     }
                 }
@@ -162,29 +149,82 @@ struct ResultView: View {
     
     private var descriptionView: some View {
         VStack(alignment: .leading, spacing: LayoutConstants.padding) {
-            Text("Interpretation")
-                .font(.headline)
-                .foregroundColor(.auraText)
-            
-            Text(viewModel.primaryDescription)
-                .font(.body)
-                .foregroundColor(.auraTextSecondary)
-                .lineSpacing(6)
-            
-            if !viewModel.showFullDescription && !viewModel.canViewFullDescription {
-                Button(action: viewModel.toggleFullDescription) {
-                    HStack {
-                        Text("Read full description")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                        
-                        Image(systemName: "crown.fill")
-                            .font(.caption)
-                    }
-                    .foregroundColor(.auraAccent)
+            // Primary color interpretation
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Circle()
+                        .fill(viewModel.auraResult.primaryColor.color)
+                        .frame(width: 20, height: 20)
+                    Text(viewModel.auraResult.primaryColor.name + " Aura")
+                        .font(.headline)
+                        .foregroundColor(.auraText)
                 }
-                .padding(.top, LayoutConstants.smallPadding)
+                
+                Text(viewModel.primaryDescription)
+                    .font(.body)
+                    .foregroundColor(.auraTextSecondary)
+                    .lineSpacing(6)
             }
+            
+            // Secondary color interpretation (if exists)
+            if let secondaryColor = viewModel.auraResult.secondaryColor,
+               let secondaryDesc = viewModel.secondaryDescription {
+                Divider()
+                    .background(Color.auraTextSecondary.opacity(0.3))
+                    .padding(.vertical, 4)
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Circle()
+                            .fill(secondaryColor.color)
+                            .frame(width: 20, height: 20)
+                        Text(secondaryColor.name + " Energy")
+                            .font(.subheadline)
+                            .foregroundColor(.auraText)
+                    }
+                    
+                    Text(secondaryDesc)
+                        .font(.caption)
+                        .foregroundColor(.auraTextSecondary)
+                        .lineSpacing(4)
+                }
+            }
+            
+            // Tertiary color interpretation (if exists)
+            if let tertiaryColor = viewModel.auraResult.tertiaryColor,
+               let tertiaryDesc = viewModel.tertiaryDescription {
+                Divider()
+                    .background(Color.auraTextSecondary.opacity(0.3))
+                    .padding(.vertical, 4)
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Circle()
+                            .fill(tertiaryColor.color)
+                            .frame(width: 20, height: 20)
+                        Text(tertiaryColor.name + " Influence")
+                            .font(.caption)
+                            .foregroundColor(.auraText)
+                    }
+                    
+                    Text(tertiaryDesc)
+                        .font(.caption2)
+                        .foregroundColor(.auraTextSecondary)
+                        .lineSpacing(3)
+                }
+            }
+            
+            // Toggle full description button
+            Button(action: viewModel.toggleFullDescription) {
+                HStack {
+                    Text(viewModel.showFullDescription ? "Show less" : "Read full description")
+                        .font(.subheadline)
+                    Image(systemName: viewModel.showFullDescription ? "chevron.up" : "chevron.down")
+                        .font(.caption)
+                }
+                .foregroundColor(.auraAccent)
+            }
+            .padding(.top, LayoutConstants.smallPadding)
         }
         .padding(LayoutConstants.padding)
         .background(Color.auraSurface)
@@ -250,7 +290,7 @@ struct ShareSheet: UIViewControllerRepresentable {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(result: AuraResult.preview, coordinator: AppCoordinator())
+        ResultView(result: AuraResult.preview, coordinator: AppCoordinator(), mode: .faceDetection)
     }
 }
 

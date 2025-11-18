@@ -66,8 +66,7 @@ struct HistoryView: View {
             }
             
             Text("Scan History")
-                .font(.title)
-                .fontWeight(.bold)
+                .font(.title.bold())
                 .foregroundColor(.auraText)
             
             Spacer()
@@ -93,8 +92,7 @@ struct HistoryView: View {
                         Image(systemName: filter.icon)
                         Text(filter.rawValue)
                     }
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
+                    .font(.subheadline.weight(.semibold))
                     .foregroundColor(viewModel.selectedFilter == filter ? .white : .auraTextSecondary)
                     .padding(.horizontal, LayoutConstants.padding)
                     .padding(.vertical, LayoutConstants.smallPadding)
@@ -140,8 +138,7 @@ struct HistoryView: View {
                 .foregroundColor(.auraTextSecondary)
             
             Text(viewModel.selectedFilter == .favorites ? "No Favorites Yet" : "No Scans Yet")
-                .font(.title2)
-                .fontWeight(.bold)
+                .font(.title2.bold())
                 .foregroundColor(.auraText)
             
             Text(viewModel.selectedFilter == .favorites ? "Mark scans as favorite to see them here" : "Your scan history will appear here")
