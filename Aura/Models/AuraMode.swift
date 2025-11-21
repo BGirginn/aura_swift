@@ -9,84 +9,76 @@ import Foundation
 
 /// Different modes for aura detection
 enum AuraMode: String, Codable, CaseIterable {
-    case quiz = "quiz"
-    case photoAnalysis = "photo_analysis"
-    case faceDetection = "face_detection"
+    case faceAura = "face_aura"        // Yüz Aurası
+    case outfitAura = "outfit_aura"    // Kombin Aurası
+    
+    // Legacy support (deprecated)
+    @available(*, deprecated, renamed: "faceAura")
+    static var faceDetection: AuraMode { .faceAura }
+    
+    @available(*, deprecated, renamed: "outfitAura")
+    static var photoAnalysis: AuraMode { .outfitAura }
     
     var displayName: String {
         switch self {
-        case .quiz:
-            return "Personality Quiz"
-        case .photoAnalysis:
-            return "Photo Analysis"
-        case .faceDetection:
+        case .faceAura:
             return "Face Aura"
+        case .outfitAura:
+            return "Outfit Aura"
         }
     }
     
     var displayNameTR: String {
         switch self {
-        case .quiz:
-            return "Kişilik Testi"
-        case .photoAnalysis:
-            return "Fotoğraf Analizi"
-        case .faceDetection:
+        case .faceAura:
             return "Yüz Aurası"
+        case .outfitAura:
+            return "Kombin Aurası"
         }
     }
     
     var description: String {
         switch self {
-        case .quiz:
-            return "Answer psychological questions to discover your aura"
-        case .photoAnalysis:
-            return "Analyze colors from your outfit or environment"
-        case .faceDetection:
-            return "Detect aura from facial energy field"
+        case .faceAura:
+            return "Detect aura from your facial energy field using camera or gallery"
+        case .outfitAura:
+            return "Analyze colors from your outfit or environment using camera or gallery"
         }
     }
     
     var descriptionTR: String {
         switch self {
-        case .quiz:
-            return "Psikolojik sorularla auranızı keşfedin"
-        case .photoAnalysis:
-            return "Kombininizdeki veya çevrenizdeki renklerden aura belirleyin"
-        case .faceDetection:
-            return "Yüzünüzün enerji alanından aura tespit edin"
+        case .faceAura:
+            return "Kameradan veya galeriden yüzünüzün enerji alanından aura tespit edin"
+        case .outfitAura:
+            return "Kameradan veya galeriden kombinizdeki renklerden aura belirleyin"
         }
     }
     
     var icon: String {
         switch self {
-        case .quiz:
-            return "questionmark.circle.fill"
-        case .photoAnalysis:
-            return "photo.fill"
-        case .faceDetection:
+        case .faceAura:
             return "person.crop.circle.fill"
+        case .outfitAura:
+            return "photo.fill"
         }
     }
     
     var resultTitle: String {
         switch self {
-        case .quiz:
-            return "Your Personality Aura"
-        case .photoAnalysis:
-            return "Your Color Energy"
-        case .faceDetection:
+        case .faceAura:
             return "Your Facial Aura"
+        case .outfitAura:
+            return "Your Outfit Aura"
         }
     }
     
     var resultTitleTR: String {
         switch self {
-        case .quiz:
-            return "Kişilik Auranız"
-        case .photoAnalysis:
-            return "Renk Enerjiniz"
-        case .faceDetection:
+        case .faceAura:
             return "Yüz Auranız"
+        case .outfitAura:
+            return "Kombin Auranız"
         }
     }
 }

@@ -11,6 +11,7 @@ import SwiftUI
 struct AuraApp: App {
     
     @StateObject private var coordinator = AppCoordinator()
+    @StateObject private var themeManager = ThemeManager.shared
     
     init() {
         AnalyticsService.shared.configure()
@@ -20,7 +21,8 @@ struct AuraApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(coordinator)
-                .preferredColorScheme(.dark)
+                .environmentObject(themeManager)
+                .preferredColorScheme(themeManager.colorScheme)
         }
     }
 }

@@ -23,10 +23,6 @@ struct ContentView: View {
                 ModeSelectionView(coordinator: coordinator)
                     .transition(.move(edge: .trailing).combined(with: .opacity))
                 
-            case .quiz:
-                QuizView(coordinator: coordinator)
-                    .transition(.move(edge: .trailing).combined(with: .opacity))
-                
             case .camera(let mode):
                 CameraView(coordinator: coordinator, mode: mode)
                     .transition(.move(edge: .bottom).combined(with: .opacity))

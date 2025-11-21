@@ -36,6 +36,13 @@
         "long": "L'aura rouge représente une énergie forte, la passion et la vitalité. Vous êtes un leader naturel avec des émotions puissantes et une volonté de réussir. Votre présence commande l'attention et inspire l'action chez les autres.",
         "traits": ["Énergique", "Passionné", "Déterminé", "Confiant", "Leader"],
         "advice": "Canalisez votre énergie dans des activités productives. Pratiquez la patience et évitez les décisions impulsives."
+      },
+      "UK": {
+        "countryCode": "UK",
+        "short": "Passion and energy",
+        "long": "Your red aura signals a powerhouse of energy and determination. You're a go-getter who doesn't back down from challenges. Your passionate nature drives you to achieve your goals with unwavering commitment.",
+        "traits": ["Driven", "Passionate", "Bold", "Competitive", "Assertive"],
+        "advice": "Balance your intensity with moments of calm. Channel your power positively and remember to take breaks."
       }
     }
   },
@@ -76,6 +83,13 @@
         "long": "L'aura orange indique la créativité, l'enthousiasme et l'énergie sociale. Vous êtes aventureux et aimez les nouvelles expériences. Votre chaleur attire les gens vers vous.",
         "traits": ["Créatif", "Enthousiaste", "Social", "Aventureux", "Chaleureux"],
         "advice": "Exprimez votre créativité librement. Restez ouvert aux nouvelles expériences et connexions."
+      },
+      "UK": {
+        "countryCode": "UK",
+        "short": "Creativity and enthusiasm",
+        "long": "Your orange aura radiates creative energy and infectious enthusiasm. You're a natural motivator who inspires others with your adventurous spirit and warm personality.",
+        "traits": ["Creative", "Energetic", "Social", "Fun-loving", "Spontaneous"],
+        "advice": "Channel your creative energy into projects. Share your enthusiasm with others and embrace new opportunities."
       }
     }
   },
@@ -109,6 +123,13 @@
         "long": "L'aura jaune reflète la clarté intellectuelle, l'optimisme et la joie. Vous avez un esprit brillant et analytique. Votre énergie positive élève ceux qui vous entourent.",
         "traits": ["Optimiste", "Intelligent", "Joyeux", "Analytique", "Ensoleillé"],
         "advice": "Partagez votre énergie positive avec les autres. Faites confiance à vos intuitions intellectuelles."
+      },
+      "UK": {
+        "countryCode": "UK",
+        "short": "Clarity and optimism",
+        "long": "Your yellow aura reflects intellectual clarity, optimism, and joy. You have a bright and analytical mind. Your positive energy uplifts those around you and brings light to any situation.",
+        "traits": ["Optimistic", "Intelligent", "Joyful", "Analytical", "Sunny"],
+        "advice": "Share your positive energy with others. Trust your intellectual insights and maintain your cheerful outlook."
       }
     }
   },
@@ -149,6 +170,13 @@
         "long": "L'aura verte représente la croissance, l'équilibre et l'énergie de guérison. Vous êtes un guérisseur naturel et un artisan de paix. Votre présence apporte le calme et la restauration.",
         "traits": ["Équilibré", "Guérisseur", "Nourrissant", "Paisible", "Croissant"],
         "advice": "Continuez à vous nourrir vous-même et les autres. Maintenez votre connexion avec la nature."
+      },
+      "UK": {
+        "countryCode": "UK",
+        "short": "Growth and harmony",
+        "long": "Your green aura reflects natural balance and healing abilities. You bring peace wherever you go and have a gift for helping others grow. Your presence is calming and restorative.",
+        "traits": ["Balanced", "Healer", "Compassionate", "Natural", "Grounded"],
+        "advice": "Trust your healing instincts. Spend time in nature to recharge your energy and maintain your connection with the earth."
       }
     }
   },
@@ -182,6 +210,13 @@
         "long": "L'aura bleue indique le calme, l'intuition et de fortes compétences en communication. Vous êtes un guérisseur naturel et un empathe. Votre sagesse guide les autres.",
         "traits": ["Calme", "Intuitif", "Communicatif", "Sage", "Empathique"],
         "advice": "Faites confiance à votre intuition et parlez votre vérité. Écoutez votre voix intérieure."
+      },
+      "UK": {
+        "countryCode": "UK",
+        "short": "Calm and intuitive",
+        "long": "Your blue aura indicates calmness, intuition, and strong communication skills. You are a natural healer and empath. Your wisdom guides others and your presence brings tranquillity.",
+        "traits": ["Calm", "Intuitive", "Communicative", "Wise", "Empathic"],
+        "advice": "Trust your intuition and speak your truth. Listen to your inner voice and honour your empathic gifts."
       }
     }
   },
@@ -215,6 +250,13 @@
         "long": "L'aura violette représente la conscience spirituelle, l'intuition et la connexion mystique. Vous avez une compréhension profonde de l'invisible et des royaumes spirituels.",
         "traits": ["Spirituel", "Intuitif", "Mystique", "Sage", "Psychique"],
         "advice": "Développez vos pratiques spirituelles. Faites confiance à vos impressions psychiques."
+      },
+      "UK": {
+        "countryCode": "UK",
+        "short": "Spiritual and mystical",
+        "long": "Your purple aura represents spiritual awareness, intuition, and mystical connection. You have a deep understanding of the unseen and spiritual realms. Your psychic abilities are strong.",
+        "traits": ["Spiritual", "Intuitive", "Mystical", "Wise", "Psychic"],
+        "advice": "Develop your spiritual practices. Trust your psychic impressions and honour your connection to the divine."
       }
     }
   },
@@ -248,6 +290,13 @@
         "long": "L'aura rose reflète l'amour, la compassion et l'énergie nourrissante. Vous avez un cœur tendre et vous vous souciez profondément des autres. Votre amour guérit.",
         "traits": ["Aimant", "Compatissant", "Doux", "Nourrissant", "Gentil"],
         "advice": "Continuez à répandre l'amour et la gentillesse. N'oubliez pas de vous aimer aussi."
+      },
+      "UK": {
+        "countryCode": "UK",
+        "short": "Love and compassion",
+        "long": "Your pink aura reflects love, compassion, and nurturing energy. You have a gentle heart and care deeply for others. Your love heals and brings comfort to those around you.",
+        "traits": ["Loving", "Compassionate", "Gentle", "Nurturing", "Kind"],
+        "advice": "Continue spreading love and kindness. Remember to love yourself too and set healthy boundaries."
       }
     }
   },
@@ -281,6 +330,13 @@
         "long": "L'aura blanche représente la pureté, l'illumination spirituelle et la connexion divine. Vous avez atteint un haut niveau de conscience spirituelle.",
         "traits": ["Pur", "Illuminé", "Spirituel", "Divin", "Protégé"],
         "advice": "Maintenez votre pratique spirituelle. Partagez votre lumière avec le monde."
+      },
+      "UK": {
+        "countryCode": "UK",
+        "short": "Purity and enlightenment",
+        "long": "Your white aura represents purity, spiritual enlightenment, and divine connection. You have achieved a high level of spiritual awareness and are protected by higher forces.",
+        "traits": ["Pure", "Enlightened", "Spiritual", "Divine", "Protected"],
+        "advice": "Maintain your spiritual practice. Share your light with the world and continue on your path of enlightenment."
       }
     }
   }

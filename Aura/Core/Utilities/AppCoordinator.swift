@@ -20,14 +20,13 @@ class AppCoordinator: ObservableObject {
     }
     @Published var isShowingSettings = false
     @Published var selectedHistoryItem: AuraResult?
-    @Published var selectedMode: AuraMode = .faceDetection
+    @Published var selectedMode: AuraMode = .faceAura
     
     // MARK: - Screen Enum
     
     enum Screen: Equatable {
         case onboarding
         case modeSelection
-        case quiz
         case camera(AuraMode)
         case result(AuraResult, AuraMode?)
         case history
@@ -45,20 +44,11 @@ class AppCoordinator: ObservableObject {
     
     func selectMode(_ mode: AuraMode) {
         selectedMode = mode
-        switch mode {
-        case .quiz:
-            currentScreen = .quiz
-        case .photoAnalysis, .faceDetection:
-            currentScreen = .camera(mode)
-        }
+        currentScreen = .camera(mode)
     }
     
     func showCamera() {
         currentScreen = .camera(selectedMode)
-    }
-    
-    func showQuiz() {
-        currentScreen = .quiz
     }
     
     func showResult(_ result: AuraResult, mode: AuraMode? = nil) {
@@ -131,7 +121,6 @@ private extension AppCoordinator.Screen {
         switch self {
         case .onboarding: return "onboarding"
         case .modeSelection: return "mode_selection"
-        case .quiz: return "quiz"
         case .camera(let mode): return "camera_\(mode.rawValue)"
         case .result(_, let mode): return "result_\(mode?.rawValue ?? "unknown")"
         case .history: return "history"

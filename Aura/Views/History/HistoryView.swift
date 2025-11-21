@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+#if canImport(Charts)
+import Charts
+#endif
 
 struct HistoryView: View {
     
@@ -40,7 +43,7 @@ struct HistoryView: View {
                 if viewModel.isLoading {
                     loadingView
                 } else if viewModel.filteredItems.isEmpty {
-                    emptyStateView(searchActive: !viewModel.searchText.isEmpty)
+                    emptyStateViewContent
                 } else {
                     historyListView
                 }
@@ -181,51 +184,22 @@ struct HistoryView: View {
     
     // MARK: - Empty State
     
-    private func emptyStateView(searchActive: Bool) -> some View {
-        VStack(spacing: LayoutConstants.largePadding) {
-            Spacer()
-            
-            Image(systemName: viewModel.selectedFilter == .favorites ? "star" : "clock.arrow.circlepath")
-                .font(.system(size: 60))
-                .foregroundColor(.auraTextSecondary)
-            
-            let title = searchActive
-            ? "No Matches Found"
-            : (viewModel.selectedFilter == .favorites ? "No Favorites Yet" : "No Scans Yet")
-            
-            Text(title)
-                .font(.title2.bold())
-                .foregroundColor(.auraText)
-            
-            let message: String
-            if searchActive {
-                message = "Try a different color name or clear the search filter."
+    private var emptyStateViewContent: some View {
+        Group {
+            if !viewModel.searchText.isEmpty {
+                EmptyStateView.searchEmpty()
             } else if viewModel.selectedFilter == .favorites {
-                message = "Mark scans as favorite to see them here"
+                EmptyStateView.favoritesEmpty {
+                    coordinator.showModeSelection()
+                }
             } else {
-                message = "Your scan history will appear here"
+                EmptyStateView.historyEmpty {
+                    coordinator.showModeSelection()
+                }
             }
-            
-            Text(message)
-                .font(.body)
-                .foregroundColor(.auraTextSecondary)
-                .multilineTextAlignment(.center)
-            
-            Button(action: { coordinator.showCamera() }) {
-                Text("Start Scanning")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, LayoutConstants.largePadding)
-                    .padding(.vertical, LayoutConstants.padding)
-                    .background(Color.auraAccent)
-                    .cornerRadius(LayoutConstants.cornerRadius)
-            }
-            .padding(.top)
-            
-            Spacer()
         }
-        .padding(LayoutConstants.largePadding)
     }
+    
     
     // MARK: - History List
     

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -111,7 +111,7 @@
 		43151EE38AB9C4BD7FFB0F72 /* aura_comments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = aura_comments.json; sourceTree = "<group>"; };
 		4550651BFAFBCE1B1C947166 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		4803458309C7F43121F083E4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4A9E59AC258B2C2BA91E5EF7 /* Aura.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Aura.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A9E59AC258B2C2BA91E5EF7 /* Aura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		572FCAE67CB9FDC81AD3FDCD /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		57E05368A92DA9A8FA8CF943 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5808425EA89ED7476F6DAE27 /* AuraRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraRingsView.swift; sourceTree = "<group>"; };
@@ -127,14 +127,14 @@
 		938EA13730D79840F2FCBBA5 /* Aura.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aura.entitlements; sourceTree = "<group>"; };
 		9C2A570EF807011633DDFE54 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		9CC9B5A14BD2369394C339F8 /* aura_stories_additions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = aura_stories_additions.txt; sourceTree = "<group>"; };
-		A4DF3D6088EB45BF8FC1E78D /* AuraUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AuraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4DF3D6088EB45BF8FC1E78D /* AuraUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; name = AuraUITests.xctest; path = Aura.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A664D5581D37A2A4E55226 /* DebugManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugManager.swift; sourceTree = "<group>"; };
 		B241B66FE1BD81E524EA6518 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = "<group>"; };
 		B40A56D715CF9FB240F7AB60 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 		BE352B87F5C8577B068BC75F /* quiz_questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quiz_questions.json; sourceTree = "<group>"; };
 		C46E64F56A77515C57706269 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UIKit.framework; sourceTree = "<group>"; };
 		D0F8DCB3D4CF8FAC83A3EE3B /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Combine.framework; sourceTree = "<group>"; };
-		D8CF4CF9E7D0954FEFB3E954 /* AuraTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AuraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8CF4CF9E7D0954FEFB3E954 /* AuraTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; name = AuraTests.xctest; path = Aura.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13093E36661C97F1768A2A4 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Vision.framework; sourceTree = "<group>"; };
 		E36F1DD7CBF9E02029E63382 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E54200A67D1D11A53AA90D7A /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
@@ -538,7 +538,6 @@
 			);
 			mainGroup = 1A691351EBE1DD7961333418;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -669,6 +668,7 @@
 					"\".\"",
 				);
 				INFOPLIST_FILE = Aura/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -693,6 +693,7 @@
 					"\".\"",
 				);
 				INFOPLIST_FILE = Aura/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

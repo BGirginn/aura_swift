@@ -21,12 +21,13 @@ struct ModeSelectionView: View {
                 
                 Spacer()
                 
-                // Mode cards
+                // Mode cards - Only show faceAura and outfitAura
                 VStack(spacing: LayoutConstants.largePadding) {
-                    ForEach(AuraMode.allCases, id: \.self) { mode in
-                        ModeCard(mode: mode) {
-                            coordinator.selectMode(mode)
-                        }
+                    ModeCard(mode: .faceAura) {
+                        coordinator.selectMode(.faceAura)
+                    }
+                    ModeCard(mode: .outfitAura) {
+                        coordinator.selectMode(.outfitAura)
                     }
                 }
                 .padding(.horizontal, LayoutConstants.largePadding)

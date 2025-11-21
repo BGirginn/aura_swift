@@ -1,0 +1,86 @@
+/* Onboarding */
+"onboarding.page1.title" = "Discover Your Aura";
+"onboarding.page1.description" = "Reveal the colours of your energy field through advanced image analysis";
+"onboarding.page2.title" = "Personalised Insights";
+"onboarding.page2.description" = "Get culturally adapted interpretations based on your location";
+"onboarding.page3.title" = "Track Your Journey";
+"onboarding.page3.description" = "Monitor how your aura changes over time";
+"onboarding.continue" = "Continue";
+"onboarding.getStarted" = "Get Started";
+
+/* Camera */
+"camera.title" = "Aura Scanner";
+"camera.permission.title" = "Camera Access Required";
+"camera.permission.message" = "We need access to your camera to scan your aura";
+"camera.permission.settings" = "Open Settings";
+"camera.permission.grant" = "Grant Access";
+"camera.position.message" = "Position your face in the centre";
+"camera.scans.remaining" = "%d scans remaining today";
+"camera.scans.unlimited" = "Unlimited Scans";
+"camera.upgrade" = "Upgrade";
+
+/* Result */
+"result.title" = "Your Aura";
+"result.colorComposition" = "Colour Composition";
+"result.interpretation" = "Interpretation";
+"result.readFull" = "Read full description";
+"result.save" = "Save to History";
+"result.saved" = "Saved";
+"result.scanAgain" = "Scan Again";
+"result.share" = "Share";
+
+/* History */
+"history.title" = "Scan History";
+"history.all" = "All";
+"history.favorites" = "Favourites";
+"history.scans" = "%d scans";
+"history.empty.title" = "No Scans Yet";
+"history.empty.message" = "Your scan history will appear here";
+"history.empty.favorites" = "No Favourites Yet";
+"history.empty.favoritesMessage" = "Mark scans as favourite to see them here";
+"history.startScanning" = "Start Scanning";
+"history.with" = "with";
+
+/* Settings */
+"settings.title" = "Settings";
+"settings.account" = "Account";
+"settings.accountStatus" = "Account Status";
+"settings.freeUser" = "Free User";
+"settings.premiumMember" = "Premium Member";
+"settings.upgrade" = "Upgrade";
+"settings.localization" = "Localisation";
+"settings.country" = "Country/Region";
+"settings.footer.localization" = "Aura interpretations will be adapted to your selected region";
+"settings.notifications" = "Notifications";
+"settings.dailyReminders" = "Daily Reminders";
+"settings.footer.notifications" = "Receive daily reminders to scan your aura";
+"settings.about" = "About";
+"settings.privacyPolicy" = "Privacy Policy";
+"settings.termsOfService" = "Terms of Service";
+"settings.version" = "Version";
+"settings.support" = "Support";
+"settings.contactSupport" = "Contact Support";
+"settings.rateApp" = "Rate App";
+"settings.done" = "Done";
+
+/* Paywall */
+"paywall.title" = "Unlock Premium";
+"paywall.subtitle" = "Get unlimited access to all features";
+"paywall.feature.unlimitedScans" = "Unlimited Scans";
+"paywall.feature.detailedDescriptions" = "Detailed Descriptions";
+"paywall.feature.auraTrends" = "Aura Trends";
+"paywall.feature.adFree" = "Ad-Free Experience";
+"paywall.feature.prioritySupport" = "Priority Support";
+"paywall.subscribe" = "Start Free Trial";
+"paywall.price" = "Then £4.99/month";
+"paywall.terms" = "Terms & Conditions";
+
+/* Errors */
+"error.generic" = "An unexpected error occurred. Please try again.";
+"error.noFaceDetected" = "No face detected. Please make sure your face is clearly visible.";
+"error.processingFailed" = "Failed to process the image. Please try again with better lighting.";
+"error.dailyLimitReached" = "You've reached your daily scan limit. Upgrade to Premium for unlimited scans!";
+
+/* Disclaimer */
+"disclaimer.message" = "This app is for entertainment purposes only. Aura readings are not scientifically proven and should not be used for medical or professional advice.";
+

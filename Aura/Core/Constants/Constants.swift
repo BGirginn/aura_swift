@@ -116,10 +116,42 @@ enum SupportedCountries: String, CaseIterable {
         case .france: return "🇫🇷"
         }
     }
+    
+    var description: String {
+        switch self {
+        case .usa: return "US interpretations"
+        case .turkey: return "TR yorumları"
+        case .uk: return "UK interpretations"
+        case .germany: return "DE Interpretationen"
+        case .france: return "FR interprétations"
+        }
+    }
 }
 
-// MARK: - Premium Features (Disabled for base version)
-// Will be added in Phase 2
+// MARK: - IAP Product IDs
+
+enum IAPProductID {
+    // Subscriptions
+    static let premiumMonthly = "com.auracolorfinder.premium.monthly"
+    static let premiumYearly = "com.auracolorfinder.premium.yearly"
+    
+    // Credit Packs
+    static let credits5 = "com.auracolorfinder.credits.5"
+    static let credits15 = "com.auracolorfinder.credits.15"
+    static let credits40 = "com.auracolorfinder.credits.40"
+    
+    static var subscriptions: [String] {
+        return [premiumMonthly, premiumYearly]
+    }
+    
+    static var creditPacks: [String] {
+        return [credits5, credits15, credits40]
+    }
+    
+    static var all: [String] {
+        return subscriptions + creditPacks
+    }
+}
 
 // MARK: - Analytics Events
 
@@ -142,6 +174,9 @@ enum AnalyticsEvent: String {
     case purchaseFailed = "purchase_failed"
     case purchase_restored = "purchase_restored"
     case errorOccurred = "error_occurred"
+    case userSignedIn = "user_signed_in"
+    case userSignedOut = "user_signed_out"
+    case settingsChanged = "settings_changed"
 }
 
 // MARK: - Error Messages

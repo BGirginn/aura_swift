@@ -89,7 +89,7 @@ class CameraViewModel: ObservableObject {
     
     // MARK: - Image Processing
     
-    func processImage(_ image: UIImage, mode: AuraMode = .faceDetection) {
+    func processImage(_ image: UIImage, mode: AuraMode = .faceAura) {
         isProcessing = true
         errorMessage = nil
         capturedImage = image.fixedOrientation()
@@ -97,8 +97,8 @@ class CameraViewModel: ObservableObject {
         logEvent(.scanStarted)
         
         switch mode {
-        case .faceDetection:
-            // Use face detection mode
+        case .faceAura:
+            // Use face detection mode (Yüz Aurası)
             auraDetectionService.detectAura(from: capturedImage!) { [weak self] result in
                 DispatchQueue.main.async {
                     self?.isProcessing = false
@@ -112,8 +112,8 @@ class CameraViewModel: ObservableObject {
                 }
             }
             
-        case .photoAnalysis:
-            // Use photo analysis mode (no face detection)
+        case .outfitAura:
+            // Use photo analysis mode (Kombin Aurası - no face detection)
             let photoAnalysisService = PhotoAnalysisService()
             photoAnalysisService.analyzePhoto(image) { [weak self] result in
                 DispatchQueue.main.async {
@@ -126,15 +126,14 @@ class CameraViewModel: ObservableObject {
                     }
                 }
             }
-            
-        case .quiz:
-            // Quiz mode doesn't use image processing
-            break
         }
     }
     
     private func handleSuccessfulScan(_ result: AuraResult) {
         detectedAuraResult = result
+        
+        // Increment daily scan count
+        incrementDailyCount()
         
         // Save to history
         do {
@@ -166,20 +165,20 @@ class CameraViewModel: ObservableObject {
         ])
     }
     
-    // MARK: - Daily Limit Check (Disabled for now)
+    // MARK: - Daily Limit Check
+    
+    private let subscriptionManager = SubscriptionManager.shared
     
     func canScanToday() -> Bool {
-        // Always return true for base version
-        return true
+        return subscriptionManager.canScan()
     }
     
     func incrementDailyCount() {
-        // Disabled for base version
+        subscriptionManager.recordScan()
     }
     
     func getRemainingScans() -> Int {
-        // Always return unlimited for base version
-        return Int.max
+        return subscriptionManager.getRemainingScans()
     }
     
     // MARK: - Analytics

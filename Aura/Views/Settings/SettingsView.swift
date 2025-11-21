@@ -13,10 +13,12 @@ struct SettingsView: View {
     @State private var selectedCountry: SupportedCountries = .usa
     @State private var selectedLanguage: String = "en"
     @State private var notificationsEnabled = false
-    @State private var isPremium = false
+    @StateObject private var subscriptionManager = SubscriptionManager.shared
+    @StateObject private var themeManager = ThemeManager.shared
     @State private var debugMode = false
     @State private var showNotificationAlert = false
     @State private var notificationAlertMessage = ""
+    @State private var showPaywall = false
     
     var body: some View {
         NavigationView {
@@ -25,7 +27,34 @@ struct SettingsView: View {
                 
                 List {
                     // Account Section
-                    // Account section removed for base version
+                    Section {
+                        HStack {
+                            Text("Account Status")
+                            Spacer()
+                            if subscriptionManager.isPremium {
+                                Text("Premium Member")
+                                    .foregroundColor(.auraAccent)
+                            } else {
+                                Text("Free User")
+                                    .foregroundColor(.auraTextSecondary)
+                            }
+                        }
+                        
+                        if !subscriptionManager.isPremium {
+                            Button(action: { showPaywall = true }) {
+                                HStack {
+                                    Text("Upgrade to Premium")
+                                        .foregroundColor(.auraAccent)
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .foregroundColor(.auraTextSecondary)
+                                }
+                            }
+                        }
+                    } header: {
+                        Text("Account")
+                    }
+                    .listRowBackground(Color.auraSurface)
                     
                     // Region Settings
                     Section {
@@ -57,6 +86,28 @@ struct SettingsView: View {
                         Text("Localization")
                     } footer: {
                         Text("Aura interpretations will be adapted to your selected region and language")
+                    }
+                    .listRowBackground(Color.auraSurface)
+                    
+                    // Appearance/Theme
+                    Section {
+                        Picker("Theme", selection: Binding(
+                            get: { themeManager.themePreference },
+                            set: { themeManager.setTheme($0) }
+                        )) {
+                            ForEach(ThemeManager.ThemePreference.allCases, id: \.self) { preference in
+                                HStack {
+                                    Image(systemName: preference == .light ? "sun.max.fill" : 
+                                          preference == .dark ? "moon.fill" : "circle.lefthalf.filled")
+                                    Text(preference.displayName)
+                                }
+                                .tag(preference)
+                            }
+                        }
+                    } header: {
+                        Text("Appearance")
+                    } footer: {
+                        Text("Choose your preferred color scheme")
                     }
                     .listRowBackground(Color.auraSurface)
                     
@@ -137,6 +188,9 @@ struct SettingsView: View {
                 }
             }
         }
+        .sheet(isPresented: $showPaywall) {
+            PaywallView()
+        }
         .onAppear {
             loadSettings()
         }
@@ -155,12 +209,15 @@ struct SettingsView: View {
         
         selectedLanguage = LocalizationService.shared.getCurrentLanguage()
         
-        isPremium = UserDefaults.standard.bool(forKey: UserDefaultsKeys.isPremiumUser)
         notificationsEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKeys.notificationsEnabled)
         
         #if DEBUG
         debugMode = DebugManager.shared.isDebugMode
         #endif
+    }
+    
+    private var isPremium: Bool {
+        subscriptionManager.isPremium
     }
     
     private func handleNotificationToggle(isOn: Bool) {

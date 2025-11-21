@@ -13,6 +13,7 @@ struct CameraView: View {
     @StateObject private var viewModel: CameraViewModel
     @StateObject private var coordinator: AppCoordinator
     @State private var showImagePicker = false
+    @State private var showPaywall = false
     let mode: AuraMode
     
     init(coordinator: AppCoordinator, mode: AuraMode, viewModel: CameraViewModel = CameraViewModel()) {
@@ -53,6 +54,9 @@ struct CameraView: View {
         }
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(onImagePicked: handleGalleryPick)
+        }
+        .sheet(isPresented: $showPaywall) {
+            PaywallView()
         }
         .onChange(of: viewModel.detectedAuraResult) { result in
             if let result = result {
@@ -106,12 +110,10 @@ struct CameraView: View {
     
     private var modeSubtitle: String {
         switch mode {
-        case .faceDetection:
+        case .faceAura:
             return "Position your face in center"
-        case .photoAnalysis:
+        case .outfitAura:
             return "Capture your outfit or environment"
-        default:
-            return ""
         }
     }
     
@@ -137,8 +139,10 @@ struct CameraView: View {
                 )
                 .padding(.horizontal, LayoutConstants.padding)
             
-            // Scan info
-            if !viewModel.isProcessing {
+            // Scan info or processing indicator
+            if viewModel.isProcessing {
+                processingIndicatorView
+            } else {
                 remainingScansView
             }
         }
@@ -197,17 +201,35 @@ struct CameraView: View {
     // MARK: - Remaining Scans
     
     private var remainingScansView: some View {
-        HStack {
-            Image(systemName: "infinity")
-                .foregroundColor(.auraAccent)
-            
-            Text("Unlimited Scans")
-                .foregroundColor(.auraTextSecondary)
+        let remaining = viewModel.getRemainingScans()
+        let isPremium = SubscriptionManager.shared.isPremium
+        
+        return HStack {
+            if isPremium {
+                Image(systemName: "infinity")
+                    .foregroundColor(.auraAccent)
+                Text("Unlimited Scans")
+                    .foregroundColor(.auraTextSecondary)
+            } else {
+                Image(systemName: "camera.fill")
+                    .foregroundColor(.auraAccent)
+                Text("\(remaining) scans remaining today")
+                    .foregroundColor(.auraTextSecondary)
+            }
         }
         .padding()
         .background(Color.auraSurface)
         .cornerRadius(LayoutConstants.cornerRadius)
         .padding(.horizontal, LayoutConstants.padding)
+    }
+    
+    // MARK: - Processing Indicator
+    
+    private var processingIndicatorView: some View {
+        ProcessingIndicatorView(
+            currentStep: .detecting,
+            progress: 0.5
+        )
     }
     
     // MARK: - Bottom Controls
@@ -292,6 +314,10 @@ struct CameraView: View {
     // MARK: - Actions
     
     private func handleCameraCapture() {
+        guard viewModel.canScanToday() else {
+            showPaywall = true
+            return
+        }
         // Capture from camera
         HapticManager.shared.scanStarted()
         viewModel.capturePhoto()
@@ -299,6 +325,10 @@ struct CameraView: View {
     
     private func handleGalleryPick(_ image: UIImage?) {
         guard let image = image else { return }
+        guard viewModel.canScanToday() else {
+            showPaywall = true
+            return
+        }
         HapticManager.shared.scanStarted()
         viewModel.processImage(image, mode: mode)
     }
@@ -351,7 +381,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 struct CameraView_Previews: PreviewProvider {
     static var previews: some View {
-        CameraView(coordinator: AppCoordinator(), mode: .faceDetection)
+        CameraView(coordinator: AppCoordinator(), mode: .faceAura)
     }
 }
 
