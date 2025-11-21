@@ -1,0 +1,19 @@
+{
+  "" : {
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests-primary.dia",
+    "emit-module-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests-primary-emit-module.dia",
+    "pch" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests-primary.swiftdeps"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/AuraTests/AuraTests.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/AuraTests.build/Objects-normal/arm64/AuraTests~partial.swiftmodule"
+  }
+}

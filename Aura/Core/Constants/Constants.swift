@@ -31,6 +31,7 @@ enum UserDefaultsKeys {
     static let dailyScanCount = "dailyScanCount"
     static let lastScanDate = "lastScanDate"
     static let hasRequestedReview = "hasRequestedReview"
+    static let notificationsEnabled = "notificationsEnabled"
 }
 
 // MARK: - Notification Names
@@ -134,11 +135,13 @@ enum AnalyticsEvent: String {
     case resultShared = "result_shared"
     case historyViewed = "history_viewed"
     case settingsOpened = "settings_opened"
+    case screenView = "screen_view"
     case paywallPresented = "paywall_presented"
     case purchaseStarted = "purchase_started"
     case purchase_success = "purchase_success"
     case purchaseFailed = "purchase_failed"
     case purchase_restored = "purchase_restored"
+    case errorOccurred = "error_occurred"
 }
 
 // MARK: - Error Messages

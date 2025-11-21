@@ -79,11 +79,16 @@ class LocalizationService {
         return getDescription(for: auraColor, countryCode: countryCode)?.longDescription ?? "No description available"
     }
     
-    // MARK: - Country Code Management
+    // MARK: - Country & Language Management
     
     func setCountryCode(_ code: String) {
         userSelectedCountryCode = code
         print("📍 LocalizationService: Country code set to \(code)")
+    }
+    
+    func setLanguage(_ language: String) {
+        UserDefaults.standard.set(language, forKey: "selectedLanguage")
+        print("🗣️ LocalizationService: Language set to \(language)")
     }
     
     func getCurrentCountryCode() -> String {
@@ -98,10 +103,17 @@ class LocalizationService {
         return Locale.current.regionCode ?? "US"
     }
     
+    func getCurrentLanguage() -> String {
+        if let saved = UserDefaults.standard.string(forKey: "selectedLanguage") {
+            return saved
+        }
+        return Locale.current.languageCode ?? "en"
+    }
+    
     /// Get aura story (narrative/storytelling style)
     func getStory(for auraColor: AuraColor, countryCode: String? = nil) -> String {
         let code = countryCode ?? getCurrentCountryCode()
-        let language = Locale.current.languageCode ?? "en"
+        let language = getCurrentLanguage()
         let langKey = language.hasPrefix("tr") ? "TR" : code
         
         // Try to get story for this color and language

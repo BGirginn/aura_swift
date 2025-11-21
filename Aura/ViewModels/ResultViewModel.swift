@@ -172,7 +172,7 @@ class ResultViewModel: ObservableObject {
     // MARK: - Analytics
     
     private func logEvent(_ event: AnalyticsEvent, parameters: [String: Any] = [:]) {
-        print("Analytics Event: \(event.rawValue), parameters: \(parameters)")
+        AnalyticsService.shared.logEvent(event, parameters: parameters)
     }
 }
 

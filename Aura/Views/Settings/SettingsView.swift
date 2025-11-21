@@ -11,9 +11,12 @@ struct SettingsView: View {
     
     @Environment(\.dismiss) var dismiss
     @State private var selectedCountry: SupportedCountries = .usa
+    @State private var selectedLanguage: String = "en"
     @State private var notificationsEnabled = false
     @State private var isPremium = false
     @State private var debugMode = false
+    @State private var showNotificationAlert = false
+    @State private var notificationAlertMessage = ""
     
     var body: some View {
         NavigationView {
@@ -38,18 +41,31 @@ struct SettingsView: View {
                         .onChange(of: selectedCountry) { newValue in
                             UserDefaults.standard.set(newValue.rawValue, forKey: UserDefaultsKeys.selectedCountryCode)
                             LocalizationService.shared.setCountryCode(newValue.rawValue)
+                            AnalyticsService.shared.setUserProperty(newValue.rawValue, for: "country")
                             print("✅ Country changed to: \(newValue.displayName)")
+                        }
+                        
+                        Picker("Language", selection: $selectedLanguage) {
+                            Text("English 🇺🇸").tag("en")
+                            Text("Türkçe 🇹🇷").tag("tr")
+                        }
+                        .onChange(of: selectedLanguage) { newValue in
+                            LocalizationService.shared.setLanguage(newValue)
+                            print("✅ Language changed to: \(newValue)")
                         }
                     } header: {
                         Text("Localization")
                     } footer: {
-                        Text("Aura interpretations will be adapted to your selected region")
+                        Text("Aura interpretations will be adapted to your selected region and language")
                     }
                     .listRowBackground(Color.auraSurface)
                     
                     // Notifications
                     Section {
                         Toggle("Daily Reminders", isOn: $notificationsEnabled)
+                            .onChange(of: notificationsEnabled) { newValue in
+                                handleNotificationToggle(isOn: newValue)
+                            }
                     } header: {
                         Text("Notifications")
                     } footer: {
@@ -74,11 +90,11 @@ struct SettingsView: View {
                     
                     // About
                     Section {
-                        NavigationLink(destination: Text("Privacy Policy")) {
+                        NavigationLink(destination: PrivacyPolicyView()) {
                             Label("Privacy Policy", systemImage: "hand.raised")
                         }
                         
-                        NavigationLink(destination: Text("Terms of Service")) {
+                        NavigationLink(destination: TermsOfServiceView()) {
                             Label("Terms of Service", systemImage: "doc.text")
                         }
                         
@@ -99,7 +115,9 @@ struct SettingsView: View {
                             Label("Contact Support", systemImage: "envelope")
                         }
                         
-                        Button(action: {}) {
+                        Button(action: {
+                            RateAppManager.shared.requestReviewFromSettings()
+                        }) {
                             Label("Rate App", systemImage: "star.fill")
                         }
                     } header: {
@@ -122,6 +140,11 @@ struct SettingsView: View {
         .onAppear {
             loadSettings()
         }
+        .alert("Notifications", isPresented: $showNotificationAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(notificationAlertMessage)
+        }
     }
     
     private func loadSettings() {
@@ -130,11 +153,36 @@ struct SettingsView: View {
             selectedCountry = country
         }
         
+        selectedLanguage = LocalizationService.shared.getCurrentLanguage()
+        
         isPremium = UserDefaults.standard.bool(forKey: UserDefaultsKeys.isPremiumUser)
+        notificationsEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKeys.notificationsEnabled)
         
         #if DEBUG
         debugMode = DebugManager.shared.isDebugMode
         #endif
+    }
+    
+    private func handleNotificationToggle(isOn: Bool) {
+        if isOn {
+            NotificationManager.shared.requestAuthorization { granted in
+                if granted {
+                    NotificationManager.shared.updateDailyReminder(enabled: true)
+                    UserDefaults.standard.set(true, forKey: UserDefaultsKeys.notificationsEnabled)
+                    notificationAlertMessage = "Daily reminders enabled. You'll receive a notification each morning."
+                    showNotificationAlert = true
+                } else {
+                    notificationsEnabled = false
+                    notificationAlertMessage = "Notifications are disabled for Aura. You can enable them in iOS Settings."
+                    showNotificationAlert = true
+                }
+            }
+        } else {
+            NotificationManager.shared.updateDailyReminder(enabled: false)
+            UserDefaults.standard.set(false, forKey: UserDefaultsKeys.notificationsEnabled)
+            notificationAlertMessage = "Daily reminders turned off."
+            showNotificationAlert = true
+        }
     }
 }
 

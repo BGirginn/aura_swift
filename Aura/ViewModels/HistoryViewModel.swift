@@ -19,6 +19,7 @@ class HistoryViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var showError = false
     @Published var selectedFilter: FilterType = .all
+    @Published var searchText: String = ""
     
     // MARK: - Filter Types
     
@@ -39,15 +40,64 @@ class HistoryViewModel: ObservableObject {
     private let dataManager: DataManager
     private var cancellables = Set<AnyCancellable>()
     
+    struct DailyScanStat: Identifiable {
+        let date: Date
+        let count: Int
+        
+        var id: Date { date }
+        
+        var label: String {
+            return Self.formatter.string(from: date)
+        }
+        
+        private static let formatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMM d"
+            return formatter
+        }()
+        }
+    }
+    
     // MARK: - Computed Properties
     
-    var displayedItems: [AuraResult] {
+    private var filteredBySelection: [AuraResult] {
         switch selectedFilter {
         case .all:
             return historyItems
         case .favorites:
             return favoriteItems
         }
+    }
+    
+    var filteredItems: [AuraResult] {
+        let base = filteredBySelection
+        guard !searchText.trimmingCharacters(in: .whitespaces).isEmpty else { return base }
+        let term = searchText.lowercased()
+        return base.filter { result in
+            var fields: [String] = [result.primaryColor.name]
+            if let secondary = result.secondaryColor {
+                fields.append(secondary.name)
+            }
+            if let tertiary = result.tertiaryColor {
+                fields.append(tertiary.name)
+            }
+            fields.append(result.formattedDate)
+            return fields.contains { $0.lowercased().contains(term) }
+        }
+    }
+    
+    var recentScanStats: [DailyScanStat] {
+        guard !historyItems.isEmpty else { return [] }
+        let calendar = Calendar.current
+        
+        let grouped = Dictionary(grouping: historyItems) { calendar.startOfDay(for: $0.timestamp) }
+        let sortedDates = grouped.keys.sorted()
+        
+        let stats = sortedDates.map { date -> DailyScanStat in
+            DailyScanStat(date: date, count: grouped[date]?.count ?? 0)
+        }
+        
+        return Array(stats.suffix(7))
     }
     
     var hasHistory: Bool {
@@ -190,7 +240,7 @@ class HistoryViewModel: ObservableObject {
     // MARK: - Analytics
     
     private func logEvent(_ event: AnalyticsEvent, parameters: [String: Any] = [:]) {
-        print("Analytics Event: \(event.rawValue), parameters: \(parameters)")
+        AnalyticsService.shared.logEvent(event, parameters: parameters)
     }
 }
 

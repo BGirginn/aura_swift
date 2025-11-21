@@ -12,6 +12,8 @@ struct HistoryView: View {
     @StateObject private var viewModel = HistoryViewModel()
     @StateObject private var coordinator: AppCoordinator
     @State private var showDeleteAlert = false
+    @State private var selectedResult: AuraResult?
+    @State private var selectedFavorite = false
     
     init(coordinator: AppCoordinator) {
         _coordinator = StateObject(wrappedValue: coordinator)
@@ -28,11 +30,17 @@ struct HistoryView: View {
                 // Filter
                 filterView
                 
+                searchBar
+                
+                if viewModel.recentScanStats.count >= 2 {
+                    trendCard
+                }
+                
                 // Content
                 if viewModel.isLoading {
                     loadingView
-                } else if viewModel.displayedItems.isEmpty {
-                    emptyStateView
+                } else if viewModel.filteredItems.isEmpty {
+                    emptyStateView(searchActive: !viewModel.searchText.isEmpty)
                 } else {
                     historyListView
                 }
@@ -52,6 +60,20 @@ struct HistoryView: View {
             if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage)
             }
+        }
+        .sheet(item: $selectedResult) { result in
+            HistoryDetailView(
+                result: result,
+                isFavorite: $selectedFavorite,
+                onDelete: {
+                    viewModel.deleteItem(result)
+                    selectedResult = nil
+                },
+                onToggleFavorite: {
+                    viewModel.toggleFavorite(result)
+                    selectedFavorite.toggle()
+                }
+            )
         }
     }
     
@@ -112,6 +134,36 @@ struct HistoryView: View {
         .padding(.bottom, LayoutConstants.padding)
     }
     
+    private var trendCard: some View {
+        ScanTrendCard(stats: viewModel.recentScanStats)
+            .padding(.horizontal, LayoutConstants.padding)
+            .padding(.bottom, LayoutConstants.padding)
+    }
+    
+    private var searchBar: some View {
+        HStack {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(.auraTextSecondary)
+            TextField("Search aura colors or dates", text: $viewModel.searchText)
+                .textInputAutocapitalization(.none)
+                .disableAutocorrection(true)
+                .foregroundColor(.auraText)
+            
+            if !viewModel.searchText.isEmpty {
+                Button(action: { viewModel.searchText = "" }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.auraTextSecondary)
+                }
+            }
+        }
+        .padding(.horizontal, LayoutConstants.padding)
+        .padding(.vertical, 10)
+        .background(Color.auraSurface)
+        .cornerRadius(LayoutConstants.cornerRadius)
+        .padding(.horizontal, LayoutConstants.padding)
+        .padding(.bottom, LayoutConstants.smallPadding)
+    }
+    
     // MARK: - Loading
     
     private var loadingView: some View {
@@ -129,7 +181,7 @@ struct HistoryView: View {
     
     // MARK: - Empty State
     
-    private var emptyStateView: some View {
+    private func emptyStateView(searchActive: Bool) -> some View {
         VStack(spacing: LayoutConstants.largePadding) {
             Spacer()
             
@@ -137,11 +189,24 @@ struct HistoryView: View {
                 .font(.system(size: 60))
                 .foregroundColor(.auraTextSecondary)
             
-            Text(viewModel.selectedFilter == .favorites ? "No Favorites Yet" : "No Scans Yet")
+            let title = searchActive
+            ? "No Matches Found"
+            : (viewModel.selectedFilter == .favorites ? "No Favorites Yet" : "No Scans Yet")
+            
+            Text(title)
                 .font(.title2.bold())
                 .foregroundColor(.auraText)
             
-            Text(viewModel.selectedFilter == .favorites ? "Mark scans as favorite to see them here" : "Your scan history will appear here")
+            let message: String
+            if searchActive {
+                message = "Try a different color name or clear the search filter."
+            } else if viewModel.selectedFilter == .favorites {
+                message = "Mark scans as favorite to see them here"
+            } else {
+                message = "Your scan history will appear here"
+            }
+            
+            Text(message)
                 .font(.body)
                 .foregroundColor(.auraTextSecondary)
                 .multilineTextAlignment(.center)
@@ -167,12 +232,13 @@ struct HistoryView: View {
     private var historyListView: some View {
         ScrollView {
             LazyVStack(spacing: LayoutConstants.padding) {
-                ForEach(viewModel.displayedItems) { item in
+                ForEach(viewModel.filteredItems) { item in
                     HistoryRowView(
                         result: item,
                         isFavorite: viewModel.isFavorite(item),
                         onTap: {
-                            coordinator.showResult(item)
+                            selectedFavorite = viewModel.isFavorite(item)
+                            selectedResult = item
                         },
                         onFavorite: {
                             viewModel.toggleFavorite(item)
@@ -257,6 +323,122 @@ struct HistoryRowView: View {
             .cornerRadius(LayoutConstants.cornerRadius)
         }
         .buttonStyle(PlainButtonStyle())
+    }
+}
+
+// MARK: - Trend Card
+
+struct ScanTrendCard: View {
+    let stats: [HistoryViewModel.DailyScanStat]
+    
+    private var maxValue: CGFloat {
+        CGFloat(stats.map { $0.count }.max() ?? 1)
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Last \(stats.count) days")
+                        .font(.caption)
+                        .foregroundColor(.auraTextSecondary)
+                    Text("Scan Trend")
+                        .font(.headline)
+                        .foregroundColor(.auraText)
+                }
+                Spacer()
+                if let latest = stats.last?.count {
+                    Text("\(latest) today")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundColor(.auraAccent)
+                }
+            }
+            
+            GeometryReader { geometry in
+                let width = geometry.size.width
+                let height = geometry.size.height
+                let stepX = width / CGFloat(max(stats.count - 1, 1))
+                
+                ZStack {
+                    // Grid
+                    Path { path in
+                        path.move(to: CGPoint(x: 0, y: height))
+                        path.addLine(to: CGPoint(x: width, y: height))
+                        path.move(to: CGPoint(x: 0, y: height / 2))
+                        path.addLine(to: CGPoint(x: width, y: height / 2))
+                    }
+                    .stroke(Color.auraSurface, lineWidth: 1)
+                    
+                    // Area gradient
+                    Path { path in
+                        for (index, stat) in stats.enumerated() {
+                            let x = CGFloat(index) * stepX
+                            let y = height - (CGFloat(stat.count) / maxValue) * height
+                            if index == 0 {
+                                path.move(to: CGPoint(x: x, y: height))
+                                path.addLine(to: CGPoint(x: x, y: y))
+                            } else {
+                                path.addLine(to: CGPoint(x: x, y: y))
+                            }
+                        }
+                        if let last = stats.indices.last {
+                            path.addLine(to: CGPoint(x: CGFloat(last) * stepX, y: height))
+                            path.closeSubpath()
+                        }
+                    }
+                    .fill(
+                        LinearGradient(
+                            colors: [Color.auraAccent.opacity(0.3), Color.auraAccent.opacity(0.05)],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    
+                    // Line
+                    Path { path in
+                        for (index, stat) in stats.enumerated() {
+                            let point = pointFor(stat: stat, index: index, width: width, height: height)
+                            if index == 0 {
+                                path.move(to: point)
+                            } else {
+                                path.addLine(to: point)
+                            }
+                        }
+                    }
+                    .stroke(Color.auraAccent, style: StrokeStyle(lineWidth: 2, lineJoin: .round))
+                    
+                    // Points
+                    ForEach(Array(stats.enumerated()), id: \.offset) { index, stat in
+                        let point = pointFor(stat: stat, index: index, width: width, height: height)
+                        Circle()
+                            .fill(Color.white)
+                            .frame(width: 8, height: 8)
+                            .position(point)
+                    }
+                }
+            }
+            .frame(height: 140)
+            
+            HStack {
+                ForEach(stats) { stat in
+                    Text(stat.label.uppercased())
+                        .font(.caption2)
+                        .foregroundColor(.auraTextSecondary)
+                        .frame(maxWidth: .infinity)
+                }
+            }
+        }
+        .padding(LayoutConstants.padding)
+        .background(Color.auraSurface)
+        .cornerRadius(LayoutConstants.cornerRadius)
+    }
+    
+    private func pointFor(stat: HistoryViewModel.DailyScanStat, index: Int, width: CGFloat, height: CGFloat) -> CGPoint {
+        let stepX = width / CGFloat(max(stats.count - 1, 1))
+        let x = CGFloat(index) * stepX
+        let normalized = CGFloat(stat.count) / maxValue
+        let y = height - (normalized * height)
+        return CGPoint(x: x, y: y)
     }
 }
 

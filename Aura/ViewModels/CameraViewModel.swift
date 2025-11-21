@@ -92,14 +92,14 @@ class CameraViewModel: ObservableObject {
     func processImage(_ image: UIImage, mode: AuraMode = .faceDetection) {
         isProcessing = true
         errorMessage = nil
-        capturedImage = image
+        capturedImage = image.fixedOrientation()
         
         logEvent(.scanStarted)
         
         switch mode {
         case .faceDetection:
             // Use face detection mode
-            auraDetectionService.detectAura(from: image) { [weak self] result in
+            auraDetectionService.detectAura(from: capturedImage!) { [weak self] result in
                 DispatchQueue.main.async {
                     self?.isProcessing = false
                     
@@ -143,6 +143,9 @@ class CameraViewModel: ObservableObject {
             print("Failed to save result: \(error.localizedDescription)")
         }
         
+        // Track user satisfaction for rate prompt
+        RateAppManager.shared.recordScanCompletion()
+        
         // Log analytics
         logEvent(.scanCompleted, parameters: [
             "primary_color": result.primaryColor.id,
@@ -182,8 +185,7 @@ class CameraViewModel: ObservableObject {
     // MARK: - Analytics
     
     private func logEvent(_ event: AnalyticsEvent, parameters: [String: Any] = [:]) {
-        // Placeholder for analytics implementation
-        print("Analytics Event: \(event.rawValue), parameters: \(parameters)")
+        AnalyticsService.shared.logEvent(event, parameters: parameters)
     }
     
     // MARK: - Reset

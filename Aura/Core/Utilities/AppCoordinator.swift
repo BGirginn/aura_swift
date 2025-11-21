@@ -13,7 +13,11 @@ class AppCoordinator: ObservableObject {
     
     // MARK: - Published Properties
     
-    @Published var currentScreen: Screen = .onboarding
+    @Published var currentScreen: Screen = .onboarding {
+        didSet {
+            AnalyticsService.shared.logScreen(currentScreen.analyticsName)
+        }
+    }
     @Published var isShowingSettings = false
     @Published var selectedHistoryItem: AuraResult?
     @Published var selectedMode: AuraMode = .faceDetection
@@ -63,10 +67,12 @@ class AppCoordinator: ObservableObject {
     
     func showHistory() {
         currentScreen = .history
+        AnalyticsService.shared.logEvent(.historyViewed)
     }
     
     func showSettings() {
         isShowingSettings = true
+        AnalyticsService.shared.logEvent(.settingsOpened)
     }
     
     func dismissSettings() {
@@ -90,6 +96,7 @@ class AppCoordinator: ObservableObject {
         set {
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.hasCompletedOnboarding)
             if newValue {
+                AnalyticsService.shared.logEvent(.onboardingCompleted)
                 showModeSelection()
             }
         }
@@ -104,6 +111,8 @@ class AppCoordinator: ObservableObject {
         } else {
             currentScreen = .onboarding
         }
+        
+        AnalyticsService.shared.logScreen(currentScreen.analyticsName)
     }
 }
 
@@ -114,6 +123,19 @@ extension AppCoordinator {
         let coordinator = AppCoordinator()
         coordinator.currentScreen = .modeSelection
         return coordinator
+    }
+}
+
+private extension AppCoordinator.Screen {
+    var analyticsName: String {
+        switch self {
+        case .onboarding: return "onboarding"
+        case .modeSelection: return "mode_selection"
+        case .quiz: return "quiz"
+        case .camera(let mode): return "camera_\(mode.rawValue)"
+        case .result(_, let mode): return "result_\(mode?.rawValue ?? "unknown")"
+        case .history: return "history"
+        }
     }
 }
 

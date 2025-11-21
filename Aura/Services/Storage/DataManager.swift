@@ -19,6 +19,13 @@ class DataManager {
         let container = NSPersistentContainer(name: "AuraDataModel")
         container.loadPersistentStores { description, error in
             if let error = error {
+                // Log critical error to analytics before fatal error
+                AnalyticsService.shared.logEvent(.errorOccurred, parameters: [
+                    "error_name": "CoreDataLoadFailure",
+                    "error_description": error.localizedDescription,
+                    "error_domain": (error as NSError).domain,
+                    "error_code": (error as NSError).code
+                ])
                 fatalError("Unable to load persistent stores: \(error)")
             }
         }

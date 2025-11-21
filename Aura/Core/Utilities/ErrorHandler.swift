@@ -45,8 +45,27 @@ class ErrorHandler: ObservableObject {
     }
     
     private func logError(_ error: Error) {
-        // TODO: Send to analytics service
+        // Log to console
         print("❌ Error: \(error.localizedDescription)")
+        
+        // Send to analytics service
+        let errorName: String
+        let errorDescription: String
+        
+        if let appError = error as? AppError {
+            errorName = String(describing: appError)
+            errorDescription = appError.localizedDescription
+        } else {
+            errorName = String(describing: type(of: error))
+            errorDescription = error.localizedDescription
+        }
+        
+        AnalyticsService.shared.logEvent(.errorOccurred, parameters: [
+            "error_name": errorName,
+            "error_description": errorDescription,
+            "error_domain": (error as NSError).domain,
+            "error_code": (error as NSError).code
+        ])
     }
     
     func clearError() {

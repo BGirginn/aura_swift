@@ -12,6 +12,10 @@ struct AuraApp: App {
     
     @StateObject private var coordinator = AppCoordinator()
     
+    init() {
+        AnalyticsService.shared.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

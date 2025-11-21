@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'AuraTests' in project 'Aura'
+➜ Explicit dependency on target 'Aura' in project 'Aura'
+Target 'Aura' in project 'Aura' (no dependencies)

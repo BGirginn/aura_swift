@@ -1,0 +1,369 @@
+{
+  "" : {
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Aura-primary.dia",
+    "emit-module-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Aura-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Aura-primary-emit-module.dia",
+    "pch" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Aura-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Aura-primary.swiftdeps"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/App/AuraApp.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraApp.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraApp.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraApp.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraApp.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraApp.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraApp.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraApp.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraApp~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/App/ContentView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Core/Constants/Constants.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Constants.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Constants.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Constants.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Constants.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Constants.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Constants.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Constants.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/Constants~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Core/Extensions/ColorExtensions.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorExtensions.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorExtensions.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorExtensions.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorExtensions.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorExtensions.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorExtensions.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorExtensions.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorExtensions~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Core/Utilities/AppCoordinator.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AppCoordinator.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AppCoordinator.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AppCoordinator.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AppCoordinator.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AppCoordinator.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AppCoordinator.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AppCoordinator.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AppCoordinator~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Core/Utilities/DebugManager.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DebugManager.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DebugManager.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DebugManager.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DebugManager.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DebugManager.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DebugManager.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DebugManager.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DebugManager~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Core/Utilities/ErrorHandler.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ErrorHandler.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ErrorHandler.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ErrorHandler.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ErrorHandler.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ErrorHandler.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ErrorHandler.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ErrorHandler.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ErrorHandler~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Core/Utilities/HapticManager.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HapticManager.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HapticManager.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HapticManager.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HapticManager.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HapticManager.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HapticManager.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HapticManager.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HapticManager~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Core/Utilities/PermissionManager.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PermissionManager.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PermissionManager.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PermissionManager.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PermissionManager.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PermissionManager.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PermissionManager.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PermissionManager.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PermissionManager~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Models/AuraColor.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraColor.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraColor.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraColor.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraColor.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraColor.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraColor.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraColor.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraColor~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Models/AuraMode.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraMode.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraMode.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraMode.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraMode.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraMode.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraMode.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraMode.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraMode~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Models/AuraResult.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraResult.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraResult.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraResult.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraResult.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraResult.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraResult.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraResult.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraResult~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Models/QuizQuestion.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizQuestion.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizQuestion.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizQuestion.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizQuestion.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizQuestion.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizQuestion.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizQuestion.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizQuestion~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Models/ScanHistory.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ScanHistory.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ScanHistory.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ScanHistory.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ScanHistory.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ScanHistory.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ScanHistory.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ScanHistory.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ScanHistory~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Services/AuraEngine/AuraDetectionService.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraDetectionService.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraDetectionService.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraDetectionService.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraDetectionService.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraDetectionService.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraDetectionService.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraDetectionService.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraDetectionService~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Services/AuraEngine/ColorAnalyzer.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorAnalyzer.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorAnalyzer.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorAnalyzer.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorAnalyzer.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorAnalyzer.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorAnalyzer.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorAnalyzer.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ColorAnalyzer~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Services/AuraEngine/PhotoAnalysisService.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PhotoAnalysisService.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PhotoAnalysisService.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PhotoAnalysisService.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PhotoAnalysisService.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PhotoAnalysisService.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PhotoAnalysisService.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PhotoAnalysisService.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/PhotoAnalysisService~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Services/Camera/CameraService.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraService.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraService.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraService.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraService.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraService.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraService.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraService.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraService~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Services/Localization/LocalizationService.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/LocalizationService.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/LocalizationService.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/LocalizationService.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/LocalizationService.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/LocalizationService.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/LocalizationService.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/LocalizationService.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/LocalizationService~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Services/Quiz/QuizService.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizService.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizService.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizService.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizService.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizService.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizService.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizService.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizService~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Services/Storage/DataManager.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DataManager.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DataManager.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DataManager.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DataManager.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DataManager.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DataManager.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DataManager.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/DataManager~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/ViewModels/CameraViewModel.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraViewModel.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraViewModel.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraViewModel.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraViewModel.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraViewModel.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraViewModel.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraViewModel.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraViewModel~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/ViewModels/HistoryViewModel.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryViewModel.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryViewModel.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryViewModel.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryViewModel.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryViewModel.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryViewModel.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryViewModel.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryViewModel~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/ViewModels/QuizViewModel.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizViewModel.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizViewModel.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizViewModel.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizViewModel.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizViewModel.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizViewModel.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizViewModel.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizViewModel~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/ViewModels/ResultViewModel.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultViewModel.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultViewModel.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultViewModel.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultViewModel.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultViewModel.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultViewModel.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultViewModel.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultViewModel~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/Camera/CameraPreviewView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraPreviewView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraPreviewView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraPreviewView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraPreviewView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraPreviewView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraPreviewView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraPreviewView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraPreviewView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/Camera/CameraView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/CameraView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/History/HistoryView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/HistoryView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/ModeSelectionView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ModeSelectionView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ModeSelectionView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ModeSelectionView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ModeSelectionView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ModeSelectionView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ModeSelectionView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ModeSelectionView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ModeSelectionView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/Onboarding/OnboardingView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/OnboardingView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/OnboardingView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/OnboardingView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/OnboardingView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/OnboardingView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/OnboardingView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/OnboardingView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/OnboardingView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/Quiz/QuizView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/QuizView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/Result/AuraRingsView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraRingsView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraRingsView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraRingsView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraRingsView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraRingsView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraRingsView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraRingsView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/AuraRingsView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/Result/ResultView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ResultView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/Result/ShareCardGenerator.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ShareCardGenerator.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ShareCardGenerator.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ShareCardGenerator.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ShareCardGenerator.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ShareCardGenerator.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ShareCardGenerator.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ShareCardGenerator.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/ShareCardGenerator~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/Aura/Views/Settings/SettingsView.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/SettingsView.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/SettingsView.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/SettingsView.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/SettingsView.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/SettingsView~partial.swiftmodule"
+  },
+  "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/bgirginn/Desktop/aura_color_swift/build/Aura.build/Debug-iphoneos/Aura.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}
