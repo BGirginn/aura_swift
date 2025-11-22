@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 /// Manages premium subscription status and daily scan limits
+@MainActor
 class SubscriptionManager: ObservableObject {
     
     static let shared = SubscriptionManager()

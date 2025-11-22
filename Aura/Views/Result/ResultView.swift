@@ -57,11 +57,7 @@ struct ResultView: View {
     private var headerView: some View {
         HStack {
             Button(action: { 
-                if mode == .quiz {
-                    coordinator.showModeSelection()
-                } else {
-                    coordinator.showCamera()
-                }
+                coordinator.showCamera()
             }) {
                 Image(systemName: "xmark")
                     .font(.title2)

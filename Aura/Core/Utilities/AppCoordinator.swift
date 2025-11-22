@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 /// Navigation coordinator for the app
+@MainActor
 class AppCoordinator: ObservableObject {
     
     // MARK: - Published Properties

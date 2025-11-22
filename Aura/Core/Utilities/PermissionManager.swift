@@ -10,6 +10,7 @@ import Photos
 import UIKit
 
 /// Manager for handling app permissions
+@MainActor
 class PermissionManager: ObservableObject {
     
     static let shared = PermissionManager()

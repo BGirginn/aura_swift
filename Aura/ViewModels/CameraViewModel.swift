@@ -10,6 +10,7 @@ import AVFoundation
 import Combine
 
 /// ViewModel for camera capture and aura detection
+@MainActor
 class CameraViewModel: ObservableObject {
     
     // MARK: - Published Properties

@@ -10,15 +10,13 @@ import AVFoundation
 
 struct CameraView: View {
     
-    @StateObject private var viewModel: CameraViewModel
+    @StateObject private var viewModel = CameraViewModel()
     @StateObject private var coordinator: AppCoordinator
     @State private var showImagePicker = false
-    @State private var showPaywall = false
     let mode: AuraMode
     
-    init(coordinator: AppCoordinator, mode: AuraMode, viewModel: CameraViewModel = CameraViewModel()) {
+    init(coordinator: AppCoordinator, mode: AuraMode) {
         _coordinator = StateObject(wrappedValue: coordinator)
-        _viewModel = StateObject(wrappedValue: viewModel)
         self.mode = mode
     }
     
@@ -54,9 +52,6 @@ struct CameraView: View {
         }
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(onImagePicked: handleGalleryPick)
-        }
-        .sheet(isPresented: $showPaywall) {
-            PaywallView()
         }
         .onChange(of: viewModel.detectedAuraResult) { result in
             if let result = result {
@@ -128,7 +123,7 @@ struct CameraView: View {
                 .overlay(
                     VStack {
                         Spacer()
-                        Text("Position your face in the center")
+                        Text(mode == .faceAura ? "Position your face in the center" : "Capture your outfit or environment")
                             .font(.caption)
                             .foregroundColor(.white)
                             .padding(8)
@@ -227,7 +222,7 @@ struct CameraView: View {
     
     private var processingIndicatorView: some View {
         ProcessingIndicatorView(
-            currentStep: .detecting,
+            currentStep: ProcessingIndicatorView.ProcessingStep.detecting,
             progress: 0.5
         )
     }
@@ -314,10 +309,6 @@ struct CameraView: View {
     // MARK: - Actions
     
     private func handleCameraCapture() {
-        guard viewModel.canScanToday() else {
-            showPaywall = true
-            return
-        }
         // Capture from camera
         HapticManager.shared.scanStarted()
         viewModel.capturePhoto()
@@ -325,10 +316,6 @@ struct CameraView: View {
     
     private func handleGalleryPick(_ image: UIImage?) {
         guard let image = image else { return }
-        guard viewModel.canScanToday() else {
-            showPaywall = true
-            return
-        }
         HapticManager.shared.scanStarted()
         viewModel.processImage(image, mode: mode)
     }

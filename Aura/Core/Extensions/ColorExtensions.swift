@@ -141,18 +141,22 @@ extension Color {
     static let auraAccent = Color(hex: "#6C5CE7")
     
     // Adaptive theme colors
+    @MainActor
     static var auraBackground: Color {
         ThemeColor.background.color
     }
     
+    @MainActor
     static var auraSurface: Color {
         ThemeColor.surface.color
     }
     
+    @MainActor
     static var auraText: Color {
         ThemeColor.text.color
     }
     
+    @MainActor
     static var auraTextSecondary: Color {
         ThemeColor.textSecondary.color
     }
@@ -170,6 +174,7 @@ struct ThemeColor {
     
     let type: ColorType
     
+    @MainActor
     var color: Color {
         // Get current theme preference
         let themePreference = ThemeManager.shared.themePreference
@@ -181,12 +186,9 @@ struct ThemeColor {
         case .dark:
             isDark = true
         case .system:
-            // Check system preference
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                isDark = windowScene.windows.first?.traitCollection.userInterfaceStyle == .dark
-            } else {
-                isDark = true // Default to dark
-            }
+            // For system, we'll use a helper that checks the current color scheme
+            // This will be resolved at view level using @Environment(\.colorScheme)
+            isDark = getSystemIsDark()
         }
         
         switch (type, isDark) {
@@ -207,6 +209,16 @@ struct ThemeColor {
         case (.textSecondary, false):
             return .auraTextSecondaryLight
         }
+    }
+    
+    private func getSystemIsDark() -> Bool {
+        if Thread.isMainThread {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                return window.traitCollection.userInterfaceStyle == .dark
+            }
+        }
+        return true // Default to dark
     }
     
     static var background: ThemeColor {

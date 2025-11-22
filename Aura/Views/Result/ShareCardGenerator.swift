@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 
 /// Generator for shareable aura result cards
+@MainActor
 class ShareCardGenerator {
     
     static let shared = ShareCardGenerator()

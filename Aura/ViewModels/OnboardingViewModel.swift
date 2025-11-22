@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 
+@MainActor
 class OnboardingViewModel: ObservableObject {
     
     @Published var currentPage = 0

@@ -122,7 +122,7 @@ class StoreKitManager: NSObject, ObservableObject {
     
     // MARK: - Helper Methods
     
-    private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
+    nonisolated private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
         switch result {
         case .unverified:
             throw StoreError.failedVerification

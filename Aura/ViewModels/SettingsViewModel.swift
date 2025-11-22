@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
+@MainActor
 class SettingsViewModel: ObservableObject {
     
     @Published var selectedCountryCode: String

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 /// Centralized error handling
+@MainActor
 class ErrorHandler: ObservableObject {
     
     static let shared = ErrorHandler()

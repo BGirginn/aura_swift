@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 /// ViewModel for displaying aura scan results
+@MainActor
 class ResultViewModel: ObservableObject {
     
     // MARK: - Published Properties

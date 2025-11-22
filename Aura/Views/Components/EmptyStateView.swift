@@ -15,6 +15,7 @@ struct EmptyStateView: View {
     let message: String
     let actionTitle: String?
     let action: (() -> Void)?
+    @State private var isAnimating = false
     
     init(
         icon: String = "sparkles",
@@ -49,7 +50,12 @@ struct EmptyStateView: View {
                 Image(systemName: icon)
                     .font(.system(size: 50))
                     .foregroundColor(.auraAccent)
-                    .symbolEffect(.pulse, options: .repeating)
+                    .scaleEffect(isAnimating ? 1.1 : 1.0)
+                    .opacity(isAnimating ? 0.8 : 1.0)
+                    .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: isAnimating)
+                    .onAppear {
+                        isAnimating = true
+                    }
             }
             
             // Title

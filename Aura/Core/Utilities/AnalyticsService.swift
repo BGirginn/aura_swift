@@ -63,7 +63,8 @@ final class AnalyticsService {
             #if canImport(FirebaseAnalytics)
             Analytics.setUserProperty(value, forName: key)
             #else
-            print("👤 User Property -> \(key): \(value ?? \"nil\")")
+            let displayValue = value ?? "nil"
+            print("👤 User Property -> \(key): \(displayValue)")
             #endif
         }
     }

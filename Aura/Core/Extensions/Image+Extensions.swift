@@ -58,7 +58,7 @@ extension UIImage {
             return self
         }
         
-        ctx.concatCTM(transform)
+        ctx.concatenate(transform)
         
         switch imageOrientation {
         case .left, .leftMirrored, .right, .rightMirrored:

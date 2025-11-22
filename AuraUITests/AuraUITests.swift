@@ -58,34 +58,48 @@ final class AuraUITests: XCTestCase {
         // Skip onboarding if needed
         skipOnboardingIfNeeded(app: app)
         
-        // Check for mode selection screen
-        let quizButton = app.buttons.matching(identifier: "Personality Quiz").firstMatch
-        XCTAssertTrue(quizButton.waitForExistence(timeout: 5) || app.buttons.matching(NSPredicate(format: "label CONTAINS 'Quiz'")).firstMatch.waitForExistence(timeout: 5), "Mode selection should appear")
+        // Check for mode selection screen - should have Face Aura and Outfit Aura
+        let faceAuraButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Face' OR label CONTAINS 'Yüz'")).firstMatch
+        let outfitAuraButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Outfit' OR label CONTAINS 'Kombin'")).firstMatch
+        
+        XCTAssertTrue(faceAuraButton.waitForExistence(timeout: 5) || outfitAuraButton.waitForExistence(timeout: 5), "Mode selection should appear with Face and Outfit Aura options")
     }
     
-    // MARK: - Quiz Flow Tests
+    // MARK: - Face Aura Mode Tests
     
-    func testQuizFlow() throws {
+    func testFaceAuraMode() throws {
         let app = XCUIApplication()
         app.launch()
         
         skipOnboardingIfNeeded(app: app)
         
-        // Tap quiz mode
-        let quizButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Quiz'")).firstMatch
-        if quizButton.waitForExistence(timeout: 5) {
-            quizButton.tap()
+        // Tap Face Aura mode
+        let faceAuraButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Face' OR label CONTAINS 'Yüz'")).firstMatch
+        if faceAuraButton.waitForExistence(timeout: 5) {
+            faceAuraButton.tap()
             
-            // Answer questions (if quiz loads)
-            let nextButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Next' OR label CONTAINS 'Continue'")).firstMatch
-            if nextButton.waitForExistence(timeout: 3) {
-                // Tap first answer option
-                let firstAnswer = app.buttons.firstMatch
-                if firstAnswer.exists {
-                    firstAnswer.tap()
-                    nextButton.tap()
-                }
-            }
+            // Should navigate to camera screen
+            let cameraScreen = app.otherElements.matching(NSPredicate(format: "identifier CONTAINS 'camera'")).firstMatch
+            // Camera screen should be accessible
+        }
+    }
+    
+    // MARK: - Outfit Aura Mode Tests
+    
+    func testOutfitAuraMode() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        skipOnboardingIfNeeded(app: app)
+        
+        // Tap Outfit Aura mode
+        let outfitAuraButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Outfit' OR label CONTAINS 'Kombin'")).firstMatch
+        if outfitAuraButton.waitForExistence(timeout: 5) {
+            outfitAuraButton.tap()
+            
+            // Should navigate to camera screen
+            let cameraScreen = app.otherElements.matching(NSPredicate(format: "identifier CONTAINS 'camera'")).firstMatch
+            // Camera screen should be accessible
         }
     }
     

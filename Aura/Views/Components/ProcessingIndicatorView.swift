@@ -12,6 +12,7 @@ struct ProcessingIndicatorView: View {
     
     let currentStep: ProcessingStep
     let progress: Double // 0.0 to 1.0
+    @State private var isAnimating = false
     
     enum ProcessingStep: Int, CaseIterable {
         case analyzing = 0
@@ -53,7 +54,12 @@ struct ProcessingIndicatorView: View {
                 Image(systemName: currentStep.icon)
                     .font(.system(size: 50))
                     .foregroundColor(.auraAccent)
-                    .symbolEffect(.pulse, options: .repeating)
+                    .scaleEffect(isAnimating ? 1.1 : 1.0)
+                    .opacity(isAnimating ? 0.8 : 1.0)
+                    .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: isAnimating)
+                    .onAppear {
+                        isAnimating = true
+                    }
             }
             
             // Step title

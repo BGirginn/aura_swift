@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 /// ViewModel for managing scan history
+@MainActor
 class HistoryViewModel: ObservableObject {
     
     // MARK: - Published Properties
@@ -55,7 +56,6 @@ class HistoryViewModel: ObservableObject {
             formatter.dateFormat = "MMM d"
             return formatter
         }()
-        }
     }
     
     // MARK: - Computed Properties

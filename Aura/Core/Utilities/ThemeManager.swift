@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 
 /// Manages app theme (light/dark/system)
+@MainActor
 class ThemeManager: ObservableObject {
     
     static let shared = ThemeManager()

@@ -39,7 +39,7 @@ struct OnboardingView: View {
             icon: "chart.line.uptrend.xyaxis",
             highlights: [
                 "Timeline of every scan",
-                "Personality quiz mode",
+                "Face and outfit analysis",
                 "Debug/test tools for experiments"
             ]
         )

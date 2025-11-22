@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 /// ViewModel for quiz-based aura detection
+@MainActor
 class QuizViewModel: ObservableObject {
     
     @Published var questions: [QuizQuestion] = []

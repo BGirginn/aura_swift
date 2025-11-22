@@ -18,7 +18,6 @@ struct SettingsView: View {
     @State private var debugMode = false
     @State private var showNotificationAlert = false
     @State private var notificationAlertMessage = ""
-    @State private var showPaywall = false
     
     var body: some View {
         NavigationView {
@@ -187,9 +186,6 @@ struct SettingsView: View {
                     .foregroundColor(.auraAccent)
                 }
             }
-        }
-        .sheet(isPresented: $showPaywall) {
-            PaywallView()
         }
         .onAppear {
             loadSettings()

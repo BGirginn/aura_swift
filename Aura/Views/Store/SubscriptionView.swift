@@ -10,7 +10,7 @@ import StoreKit
 
 struct SubscriptionView: View {
     
-    @StateObject private var viewModel = PaywallViewModel()
+    @StateObject private var viewModel = StoreViewModel()
     @Environment(\.dismiss) var dismiss
     @StateObject private var subscriptionManager = SubscriptionManager.shared
     
@@ -27,7 +27,7 @@ struct SubscriptionView: View {
                     featuresView
                     
                     // Subscription Options
-                    if !viewModel.products.isEmpty {
+                    if !viewModel.subscriptions.isEmpty {
                         subscriptionOptionsView
                     } else if viewModel.isLoading {
                         ProgressView()
@@ -85,7 +85,7 @@ struct SubscriptionView: View {
     
     private var subscriptionOptionsView: some View {
         VStack(spacing: LayoutConstants.padding) {
-            ForEach(viewModel.products, id: \.id) { product in
+            ForEach(viewModel.subscriptions, id: \.id) { product in
                 SubscriptionOptionCard(
                     product: product,
                     isPurchasing: viewModel.isPurchasing,
