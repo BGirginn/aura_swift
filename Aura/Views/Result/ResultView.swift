@@ -109,6 +109,64 @@ struct ResultView: View {
                 .foregroundColor(.auraText)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
+            // Combined Description - Single paragraph
+            VStack(alignment: .leading, spacing: 12) {
+                // Color indicators
+                HStack(spacing: 12) {
+                    ForEach(viewModel.auraResult.dominantColors.indices, id: \.self) { index in
+                        let color = viewModel.auraResult.dominantColors[index]
+                        let percentage = index < viewModel.auraResult.dominancePercentages.count 
+                            ? Int(viewModel.auraResult.dominancePercentages[index])
+                            : 0
+                        
+                        HStack(spacing: 6) {
+                            Circle()
+                                .fill(color.color)
+                                .frame(width: 20, height: 20)
+                            Text("\(color.name) \(percentage)%")
+                                .font(.caption)
+                                .foregroundColor(.auraTextSecondary)
+                        }
+                    }
+                }
+                .padding(.bottom, 8)
+                
+                // Combined description
+                Text(viewModel.combinedAuraDescription)
+                    .font(.body)
+                    .foregroundColor(.auraText)
+                    .lineSpacing(8)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding()
+            .background(Color.auraSurface)
+            .cornerRadius(LayoutConstants.cornerRadius)
+            
+            // Toggle Button for detailed view
+            if viewModel.canViewFullDescription {
+                Button(action: { viewModel.toggleFullDescription() }) {
+                    HStack {
+                        Image(systemName: viewModel.showFullDescription ? "chevron.up" : "chevron.down")
+                        Text(viewModel.showFullDescription ? "Show Summary" : "View Detailed Breakdown")
+                    }
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundColor(.auraAccent)
+                    .padding(.vertical, 8)
+                }
+            }
+            
+            // Detailed breakdown (shown when toggled)
+            if viewModel.showFullDescription {
+                detailedBreakdownView
+            }
+        }
+        .padding(.horizontal, LayoutConstants.padding)
+    }
+    
+    // MARK: - Detailed Breakdown View
+    
+    private var detailedBreakdownView: some View {
+        VStack(spacing: LayoutConstants.padding) {
             // Primary Color
             VStack(alignment: .leading, spacing: 12) {
                 HStack {
@@ -126,7 +184,7 @@ struct ResultView: View {
                     }
                 }
                 
-                Text(viewModel.showFullDescription ? viewModel.primaryStory : viewModel.primaryDescription)
+                Text(viewModel.primaryStory)
                     .font(.body)
                     .foregroundColor(.auraTextSecondary)
                     .lineSpacing(6)
@@ -193,21 +251,7 @@ struct ResultView: View {
                 .background(Color.auraSurface)
                 .cornerRadius(LayoutConstants.cornerRadius)
             }
-            
-            // Toggle Button
-            if viewModel.canViewFullDescription {
-                Button(action: { viewModel.toggleFullDescription() }) {
-                    HStack {
-                        Image(systemName: viewModel.showFullDescription ? "chevron.up" : "chevron.down")
-                        Text(viewModel.showFullDescription ? "Show Summary" : "Read Full Description")
-                    }
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundColor(.auraAccent)
-                    .padding(.vertical, 8)
-                }
-            }
         }
-        .padding(.horizontal, LayoutConstants.padding)
     }
     
     // MARK: - Old Color Breakdown (Deprecated)
@@ -395,7 +439,7 @@ struct ShareSheet: UIViewControllerRepresentable {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(result: AuraResult.preview, coordinator: AppCoordinator(), mode: .faceDetection)
+        ResultView(result: AuraResult.preview, coordinator: AppCoordinator(), mode: .faceAura)
     }
 }
 

@@ -150,7 +150,7 @@ final class ButtonInteractionTests: XCTestCase {
             let upgradeButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'Upgrade' OR label CONTAINS 'Premium'")).firstMatch
             if upgradeButton.waitForExistence(timeout: 5) {
                 upgradeButton.tap()
-                // Should show paywall
+                // Premium upgrade removed
             }
         }
     }

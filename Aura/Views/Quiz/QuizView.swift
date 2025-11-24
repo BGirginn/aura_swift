@@ -21,7 +21,7 @@ struct QuizView: View {
                 headerView
                 
                 // Question content
-                if let question = viewModel.currentQuestion {
+                if viewModel.currentQuestion != nil {
                     TabView(selection: $viewModel.currentQuestionIndex) {
                         ForEach(Array(viewModel.questions.enumerated()), id: \.offset) { index, q in
                             QuizQuestionCard(

@@ -22,7 +22,7 @@ struct AuraApp: App {
             ContentView()
                 .environmentObject(coordinator)
                 .environmentObject(themeManager)
-                .preferredColorScheme(themeManager.colorScheme)
+                .preferredColorScheme(themeManager.colorScheme ?? nil)
         }
     }
 }

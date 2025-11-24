@@ -51,13 +51,38 @@ class CameraViewModel: ObservableObject {
     }
     
     func capturePhoto() {
+        guard !isProcessing else { return }
+        
+        // Ensure session is running before capturing
+        guard cameraService.isSessionRunning, cameraService.session.isRunning else {
+            print("⚠️ Camera session not running, starting session...")
+            cameraService.startSession()
+            // Show error and let user retry
+            errorMessage = "Camera is not ready. Please wait a moment and try again."
+            showError = true
+            return
+        }
+        
         isProcessing = true
+        
+        // Capture photo - callback will be called on main thread by CameraService
         cameraService.capturePhoto { [weak self] image in
+            guard let self = self else { return }
+            
             guard let image = image else {
-                self?.isProcessing = false
+                Task { @MainActor in
+                    self.isProcessing = false
+                    self.errorMessage = "Failed to capture photo. Please try again."
+                    self.showError = true
+                }
                 return
             }
-            self?.processImage(image)
+            
+            // Process image on background thread to avoid blocking
+            Task.detached { [weak self] in
+                guard let self = self else { return }
+                await self.processImage(image, mode: .faceAura)
+            }
         }
     }
     
@@ -91,39 +116,54 @@ class CameraViewModel: ObservableObject {
     // MARK: - Image Processing
     
     func processImage(_ image: UIImage, mode: AuraMode = .faceAura) {
-        isProcessing = true
-        errorMessage = nil
-        capturedImage = image.fixedOrientation()
+        // Set processing state immediately
+        Task { @MainActor in
+            self.isProcessing = true
+            self.errorMessage = nil
+        }
         
-        logEvent(.scanStarted)
-        
-        switch mode {
-        case .faceAura:
-            // Use face detection mode (Yüz Aurası)
-            auraDetectionService.detectAura(from: capturedImage!) { [weak self] result in
-                DispatchQueue.main.async {
-                    self?.isProcessing = false
-                    
-                    switch result {
-                    case .success(let auraResult):
-                        self?.handleSuccessfulScan(auraResult)
-                    case .failure(let error):
-                        self?.handleScanError(error)
-                    }
-                }
+        // Fix orientation on background thread
+        Task.detached { [weak self] in
+            guard let self = self else { return }
+            
+            let fixedImage = image.fixedOrientation()
+            
+            await MainActor.run {
+                self.capturedImage = fixedImage
+                self.logEvent(.scanStarted)
             }
             
-        case .outfitAura:
-            // Use photo analysis mode (Kombin Aurası - no face detection)
-            let photoAnalysisService = PhotoAnalysisService()
-            photoAnalysisService.analyzePhoto(image) { [weak self] result in
-                DispatchQueue.main.async {
-                    self?.isProcessing = false
-                    
-                    if let result = result {
-                        self?.handleSuccessfulScan(result)
-                    } else {
-                        self?.handleScanError(.processingFailed)
+            // Process on background thread to avoid blocking UI
+            switch mode {
+            case .faceAura:
+                // Use face detection mode (Yüz Aurası)
+                self.auraDetectionService.detectAura(from: fixedImage) { [weak self] result in
+                    Task { @MainActor in
+                        guard let self = self else { return }
+                        self.isProcessing = false
+                        
+                        switch result {
+                        case .success(let auraResult):
+                            self.handleSuccessfulScan(auraResult)
+                        case .failure(let error):
+                            self.handleScanError(error)
+                        }
+                    }
+                }
+                
+            case .outfitAura:
+                // Use photo analysis mode (Kombin Aurası - no face detection)
+                let photoAnalysisService = PhotoAnalysisService()
+                photoAnalysisService.analyzePhoto(fixedImage) { [weak self] result in
+                    Task { @MainActor in
+                        guard let self = self else { return }
+                        self.isProcessing = false
+                        
+                        if let result = result {
+                            self.handleSuccessfulScan(result)
+                        } else {
+                            self.handleScanError(.processingFailed)
+                        }
                     }
                 }
             }

@@ -168,7 +168,6 @@ enum AnalyticsEvent: String {
     case historyViewed = "history_viewed"
     case settingsOpened = "settings_opened"
     case screenView = "screen_view"
-    case paywallPresented = "paywall_presented"
     case purchaseStarted = "purchase_started"
     case purchase_success = "purchase_success"
     case purchaseFailed = "purchase_failed"

@@ -35,6 +35,9 @@
 		48A8B97C12C701CA98F40CEF /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8B97C12C701CA98F40CF0 /* Image+Extensions.swift */; };
 		48A8B97C12C701CA98F40CF1 /* RateAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8B97C12C701CA98F40CF2 /* RateAppManager.swift */; };
 		48A8B97C12C701CA98F40CF5 /* ProcessingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8B97C12C701CA98F40CF6 /* ProcessingIndicatorView.swift */; };
+		48A8B97C12C701CA98F40CFB /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8B97C12C701CA98F40CFC /* PrivacyPolicyView.swift */; };
+		48A8B97C12C701CA98F40CFD /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8B97C12C701CA98F40CFE /* TermsOfServiceView.swift */; };
+		48A8B97C12C701CA98F40CFF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8B97C12C701CA98F4100 /* NotificationManager.swift */; };
 		6542DFA9746A60AC63FBA7B7 /* ColorAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDE0A274A30B15851A87AF /* ColorAnalyzer.swift */; };
 		684FD8291D1C63476AA1DCF4 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E220A09FB307A896F69EC3 /* ResultViewModel.swift */; };
 		6F9C296ECCEB9C4AF27DC775 /* ModeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E25AB391DFD6CF1B03A6F7 /* ModeSelectionView.swift */; };
@@ -155,6 +158,9 @@
 		48A8B97C12C701CA98F40CF0 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		48A8B97C12C701CA98F40CF2 /* RateAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAppManager.swift; sourceTree = "<group>"; };
 		48A8B97C12C701CA98F40CF6 /* ProcessingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingIndicatorView.swift; sourceTree = "<group>"; };
+		48A8B97C12C701CA98F40CFC /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		48A8B97C12C701CA98F40CFE /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
+		48A8B97C12C701CA98F4100 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6A7B8C9D0E1F2 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		B2C3D4E5F6A7B8C9D0E1F2A3 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		C3D4E5F6A7B8C9D0E1F2A3B4 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 				0B2F2672DE538DECB50CB9A7 /* AppCoordinator.swift */,
 				B2C3D4E5F6A7B8C9D0E1F2A3 /* AnalyticsService.swift */,
 				A7A664D5581D37A2A4E55226 /* DebugManager.swift */,
+				48A8B97C12C701CA98F4100 /* NotificationManager.swift */,
 				09524F70EDAAD4125F7F71EF /* ErrorHandler.swift */,
 				869E4F3ADB2BBB86FBB4A1D5 /* HapticManager.swift */,
 				023FFFF276F2B28FEB82C429 /* PermissionManager.swift */,
@@ -412,6 +419,8 @@
 			isa = PBXGroup;
 			children = (
 				29D8D3F91CBFAEB02460EC01 /* SettingsView.swift */,
+				48A8B97C12C701CA98F40CFC /* PrivacyPolicyView.swift */,
+				48A8B97C12C701CA98F40CFE /* TermsOfServiceView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -643,6 +652,9 @@
 				2E99DC06167D81CB8BAEBD0E /* PermissionManager.swift in Sources */,
 				48A8B97C12C701CA98F40CF1 /* RateAppManager.swift in Sources */,
 				48A8B97C12C701CA98F40CF5 /* ProcessingIndicatorView.swift in Sources */,
+				48A8B97C12C701CA98F40CFB /* PrivacyPolicyView.swift in Sources */,
+				48A8B97C12C701CA98F40CFD /* TermsOfServiceView.swift in Sources */,
+				48A8B97C12C701CA98F40CFF /* NotificationManager.swift in Sources */,
 				E54AD27410905E8D2D4CEB92 /* PhotoAnalysisService.swift in Sources */,
 				80B2080A8C3308224C876DC5 /* QuizQuestion.swift in Sources */,
 				E519189FBC4A70D73CC378FF /* QuizService.swift in Sources */,

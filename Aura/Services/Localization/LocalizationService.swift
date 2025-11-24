@@ -89,6 +89,8 @@ class LocalizationService {
     func setLanguage(_ language: String) {
         UserDefaults.standard.set(language, forKey: "selectedLanguage")
         print("🗣️ LocalizationService: Language set to \(language)")
+        // Post notification to refresh UI
+        NotificationCenter.default.post(name: .didChangeLanguage, object: language)
     }
     
     func getCurrentCountryCode() -> String {

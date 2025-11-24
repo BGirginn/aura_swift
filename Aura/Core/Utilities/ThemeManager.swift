@@ -72,21 +72,18 @@ class ThemeManager: ObservableObject {
     }
     
     private func updateColorScheme() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            
-            switch self.themePreference {
-            case .light:
-                self.colorScheme = .light
-            case .dark:
-                self.colorScheme = .dark
-            case .system:
-                // Use system preference
-                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                    self.colorScheme = windowScene.windows.first?.traitCollection.userInterfaceStyle == .dark ? .dark : .light
-                } else {
-                    self.colorScheme = .dark // Default fallback
-                }
+        // Already on @MainActor, no need for DispatchQueue
+        switch self.themePreference {
+        case .light:
+            self.colorScheme = .light
+        case .dark:
+            self.colorScheme = .dark
+        case .system:
+            // Use system preference
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                self.colorScheme = windowScene.windows.first?.traitCollection.userInterfaceStyle == .dark ? .dark : .light
+            } else {
+                self.colorScheme = .dark // Default fallback
             }
         }
     }

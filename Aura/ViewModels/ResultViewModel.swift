@@ -69,6 +69,61 @@ class ResultViewModel: ObservableObject {
         )
     }
     
+    /// Combined aura description - single paragraph explaining all colors together
+    var combinedAuraDescription: String {
+        let language = LocalizationService.shared.getCurrentLanguage()
+        let isTurkish = language.hasPrefix("tr")
+        
+        let primaryName = auraResult.primaryColor.name
+        let primaryDesc = localizationService.getShortDescription(
+            for: auraResult.primaryColor,
+            countryCode: auraResult.countryCode
+        )
+        
+        var description = isTurkish 
+            ? "Auranız yoğun bir \(primaryName) enerjisi gösteriyor. \(primaryDesc)"
+            : "Your aura shows a strong \(primaryName) energy. \(primaryDesc)"
+        
+        // Add secondary color influence
+        if let secondaryColor = auraResult.secondaryColor,
+           let secondaryDesc = secondaryDescription {
+            let secondaryName = secondaryColor.name
+            let percentage = auraResult.dominancePercentages.count > 1 
+                ? Int(auraResult.dominancePercentages[1])
+                : 25
+            
+            if isTurkish {
+                description += " Ayrıca \(percentage)% oranında \(secondaryName) enerjisi de mevcut. \(secondaryDesc)"
+            } else {
+                description += " Additionally, there's a \(percentage)% presence of \(secondaryName) energy. \(secondaryDesc)"
+            }
+        }
+        
+        // Add tertiary color influence
+        if let tertiaryColor = auraResult.tertiaryColor,
+           let tertiaryDesc = tertiaryDescription {
+            let tertiaryName = tertiaryColor.name
+            let percentage = auraResult.dominancePercentages.count > 2 
+                ? Int(auraResult.dominancePercentages[2])
+                : 15
+            
+            if isTurkish {
+                description += " Son olarak, \(percentage)% oranında \(tertiaryName) etkisi de görülüyor. \(tertiaryDesc)"
+            } else {
+                description += " Finally, there's a \(percentage)% influence of \(tertiaryName). \(tertiaryDesc)"
+            }
+        }
+        
+        // Add overall interpretation
+        if isTurkish {
+            description += " Bu renk kombinasyonu, kişiliğinizin çok yönlü ve dengeli bir yapıya sahip olduğunu gösteriyor."
+        } else {
+            description += " This color combination suggests a multifaceted and balanced personality structure."
+        }
+        
+        return description
+    }
+    
     // MARK: - Initialization
     
     init(auraResult: AuraResult,

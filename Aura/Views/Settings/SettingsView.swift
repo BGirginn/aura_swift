@@ -39,17 +39,6 @@ struct SettingsView: View {
                             }
                         }
                         
-                        if !subscriptionManager.isPremium {
-                            Button(action: { showPaywall = true }) {
-                                HStack {
-                                    Text("Upgrade to Premium")
-                                        .foregroundColor(.auraAccent)
-                                    Spacer()
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(.auraTextSecondary)
-                                }
-                            }
-                        }
                     } header: {
                         Text("Account")
                     }
@@ -77,8 +66,11 @@ struct SettingsView: View {
                             Text("English 🇺🇸").tag("en")
                             Text("Türkçe 🇹🇷").tag("tr")
                         }
+                        .pickerStyle(.menu)
                         .onChange(of: selectedLanguage) { newValue in
                             LocalizationService.shared.setLanguage(newValue)
+                            // Force UI refresh
+                            NotificationCenter.default.post(name: .didChangeLanguage, object: newValue)
                             print("✅ Language changed to: \(newValue)")
                         }
                     } header: {

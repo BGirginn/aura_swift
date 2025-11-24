@@ -196,21 +196,11 @@ struct CameraView: View {
     // MARK: - Remaining Scans
     
     private var remainingScansView: some View {
-        let remaining = viewModel.getRemainingScans()
-        let isPremium = SubscriptionManager.shared.isPremium
-        
-        return HStack {
-            if isPremium {
-                Image(systemName: "infinity")
-                    .foregroundColor(.auraAccent)
-                Text("Unlimited Scans")
-                    .foregroundColor(.auraTextSecondary)
-            } else {
-                Image(systemName: "camera.fill")
-                    .foregroundColor(.auraAccent)
-                Text("\(remaining) scans remaining today")
-                    .foregroundColor(.auraTextSecondary)
-            }
+        HStack {
+            Image(systemName: "infinity")
+                .foregroundColor(.auraAccent)
+            Text("Unlimited Scans")
+                .foregroundColor(.auraTextSecondary)
         }
         .padding()
         .background(Color.auraSurface)
@@ -289,8 +279,13 @@ struct CameraView: View {
             HStack(spacing: 8) {
                 ForEach(DebugManager.shared.getAllTestColors(), id: \.color.id) { item in
                     Button(action: {
-                        let testResult = DebugManager.shared.generateSampleResult(colorType: item.color)
-                        coordinator.showResult(testResult)
+                        // Generate result on background thread to avoid blocking
+                        Task.detached {
+                            let testResult = DebugManager.shared.generateSampleResult(colorType: item.color)
+                            await MainActor.run {
+                                coordinator.showResult(testResult, mode: mode)
+                            }
+                        }
                     }) {
                         Text(item.name)
                             .font(.caption)
@@ -315,8 +310,13 @@ struct CameraView: View {
     }
     
     private func handleGalleryPick(_ image: UIImage?) {
-        guard let image = image else { return }
+        guard let image = image else {
+            print("⚠️ No image selected from gallery")
+            return
+        }
+        print("✅ Gallery image picked: \(image.size)")
         HapticManager.shared.scanStarted()
+        // Process image with current mode
         viewModel.processImage(image, mode: mode)
     }
 }
@@ -350,10 +350,23 @@ struct ImagePicker: UIViewControllerRepresentable {
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             parent.presentationMode.wrappedValue.dismiss()
             
+            // Get original image
             if let image = info[.originalImage] as? UIImage {
-                print("✅ Image picked: \(image.size)")
-                DispatchQueue.main.async {
-                    self.parent.onImagePicked(image)
+                print("✅ Image picked from gallery: \(image.size)")
+                // Call completion on main thread
+                DispatchQueue.main.async { [weak self] in
+                    self?.parent.onImagePicked(image)
+                }
+            } else if let editedImage = info[.editedImage] as? UIImage {
+                // Fallback to edited image if original not available
+                print("✅ Using edited image from gallery: \(editedImage.size)")
+                DispatchQueue.main.async { [weak self] in
+                    self?.parent.onImagePicked(editedImage)
+                }
+            } else {
+                print("⚠️ Failed to get image from picker")
+                DispatchQueue.main.async { [weak self] in
+                    self?.parent.onImagePicked(nil)
                 }
             }
         }

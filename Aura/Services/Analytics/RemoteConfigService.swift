@@ -41,8 +41,7 @@ final class RemoteConfigService {
         // Set default values
         remoteConfig.setDefaults([
             "ml_enabled": false as NSNumber,
-            "daily_scan_limit": 3 as NSNumber,
-            "paywall_enabled": true as NSNumber
+            "daily_scan_limit": 3 as NSNumber
         ])
         
         // Fetch initial config
@@ -88,7 +87,6 @@ final class RemoteConfigService {
         // Return defaults if Firebase not available
         switch key {
         case "ml_enabled": return false
-        case "paywall_enabled": return true
         default: return false
         }
         #endif
